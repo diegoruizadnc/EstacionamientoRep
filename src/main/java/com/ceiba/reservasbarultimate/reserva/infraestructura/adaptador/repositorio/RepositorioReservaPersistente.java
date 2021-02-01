@@ -15,6 +15,7 @@ import org.apache.logging.log4j.Logger;
 
 @Repository
 public class RepositorioReservaPersistente implements ReservaRepositorio {
+	@SuppressWarnings("unused")
 	private static final Logger LOG=LogManager.getLogger(RepositorioReservaPersistente.class);
 	
 private EntityManager entityManager;
@@ -30,14 +31,14 @@ private EntityManager entityManager;
 		entityManager.persist(reservaPersistente);
 		entityManager.flush();
 		
-		ApartarMesa(reserva.getIdMesa());
+		apartarMesa(reserva.getIdMesa());
 		
 		return new ReservaDto(reservaPersistente.getIdReserva(),reservaPersistente.getIdMesa(),
 				reservaPersistente.getIdUsuario(), reservaPersistente.getFechaReserva(),
 				reservaPersistente.getCantidadPersonas(), reservaPersistente.getPrecioReserva());	
 	}
 	
-	public void ApartarMesa(int id){
+	public void apartarMesa(int id){
 		MesaPersistente mesaActualizarDisponibilidad= entityManager.find(MesaPersistente.class, id);
 		mesaActualizarDisponibilidad.setEstaDisponible(false);;
 		entityManager.merge(mesaActualizarDisponibilidad);

@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,6 +16,7 @@ import com.ceiba.reservasbarultimate.mesa.infraestructura.adaptador.persistencia
 
 @Component
 public class MesaDaoPersistente implements MesaDao {
+	@SuppressWarnings("unused")
 	private static final Logger LOG=LogManager.getLogger(MesaDaoPersistente.class);
 	private static final String BUSCA_MESAS_DISPONIBLES = "Mesas.byEstaDisponible";
 	
