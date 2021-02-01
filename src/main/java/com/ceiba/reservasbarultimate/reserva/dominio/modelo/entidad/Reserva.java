@@ -12,7 +12,7 @@ public class Reserva {
 	/*private static final String ID_MESA_OBLIGATORIO = "error, El numero de mesa es obligatorio";
 	private static final String ID_USUARIO_OBLIGATORIO = "error, El Id del usuario  es obligatorio";
 	private static final String CANTIDAD_PERSONAS_OBLIGATORIO = "error, Debe ingresar el numero de personas que haran parte de la mesa, para tenerla con los protocolos covid";
-	private static final String PRECIO_RESERVA_OBLIGATORIO= "error, Debe ingresar valor de la reservación";*/
+	private static final String PRECIO_RESERVA_OBLIGATORIO= "error, Debe ingresar valor de la reservacion";*/
 	
 	private static final String ID_MESA_MESA_VALIDO = "error, El numero de mesa debe ser un valor entre 1 y 9";
 	private static final String CANTIDAD_PERSONAS_NO_VALIDAS = "error, La cantidad de personas por reserva debe estar entre 1 y 5";
