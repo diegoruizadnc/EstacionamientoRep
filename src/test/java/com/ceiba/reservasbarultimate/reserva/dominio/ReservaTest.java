@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 public class ReservaTest {
 	
 
-	@InjectMocks
+/*	@InjectMocks
 	ServicioCrearReserva servicioCrearReserva;
 	@Mock
 	ReservaRepositorio reservaRepository;
@@ -35,6 +35,6 @@ public class ReservaTest {
 		
 		ReservaDto reservaReturned=servicioCrearReserva.ejecutar(reserva);
 	//	assertEquals(reservaReturned, campoRequeridoExcepcion); 
-	}
+	}*/
 
 }
