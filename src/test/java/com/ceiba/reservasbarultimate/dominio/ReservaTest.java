@@ -15,11 +15,23 @@ public class ReservaTest {
 	}
 	
 	@Test
-	public void crearReserva() throws Exception{
+	public void crearReservaDiaNoValido() throws Exception{
 		
 		Date fecha = new Date();
 		try {
 		Reserva reserva = new Reserva(1,10302l,fecha,5,180000l);
+		}catch (Exception e) {
+			assertEquals(e.getMessage(), "error, Solo puede hacer las reservas de miercoles a sabado");
+		}
+		
+		
+	}
+	
+	@Test
+	public void crearReservaFechaNulo() throws Exception{
+		
+		try {
+		Reserva reserva = new Reserva(1,10302l,null,5,180000l);
 		}catch (Exception e) {
 			assertEquals(e.getMessage(), "error, Solo puede hacer las reservas de miercoles a sabado");
 		}
