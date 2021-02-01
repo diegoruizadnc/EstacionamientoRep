@@ -20,23 +20,5 @@ class ReservasbarultimateApplicationTests {
 	}
 	
 	
-	@Test
-	 void validarCalculoDiaSemana() {
-
-		// arrange
-
-	/*	Date fechaReserva = new Date();
-		int diaPrueba = 1; // Es Lunes
-		int diaReal;
-
-		// act
-
-		diaReal = ValidadorCampos.obtenerDiaSemana(fechaReserva);
-
-		// assert
-		assertTrue(diaReal == diaPrueba); */
-	
-
-	}
 
 }
