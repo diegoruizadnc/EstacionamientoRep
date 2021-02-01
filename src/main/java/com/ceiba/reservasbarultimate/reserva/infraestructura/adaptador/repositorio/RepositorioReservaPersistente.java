@@ -40,7 +40,7 @@ private EntityManager entityManager;
 	
 	public void apartarMesa(int id){
 		MesaPersistente mesaActualizarDisponibilidad= entityManager.find(MesaPersistente.class, id);
-		mesaActualizarDisponibilidad.setEstaDisponible(false);;
+		mesaActualizarDisponibilidad.setEstaDisponible(false);
 		entityManager.merge(mesaActualizarDisponibilidad);
 	}
 
