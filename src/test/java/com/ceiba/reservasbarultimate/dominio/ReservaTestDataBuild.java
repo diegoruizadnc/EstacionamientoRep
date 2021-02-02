@@ -1,9 +1,12 @@
 package com.ceiba.reservasbarultimate.dominio;
 
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
+
 
 
 public class ReservaTestDataBuild {
@@ -24,9 +27,18 @@ public class ReservaTestDataBuild {
 		fechaReserva = new Date();
 		cantidadPersonas = 4;
 		precioReserva = 200000l;
+		ponerFechaValida();
 
 	}
 	
+	
+	
+	public void ponerFechaValida(){
+	   LocalDate localDate  = LocalDate.of(2021, 01, 28);
+	  // Date date = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
+	    Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		this.fechaReserva = date;
+	}
 
 	public ReservaTestDataBuild conIdMesa(Integer idMesa) {
 		this.idMesa = idMesa;

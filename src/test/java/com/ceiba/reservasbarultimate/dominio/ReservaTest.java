@@ -106,5 +106,19 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		
 	}
 	
+	@Test
+	 void crearReservaCantidadPersonasNoValida() throws Exception{
+		//arrange
+		Integer cantidadPersonas = 10;
+		//act
+		try {
+			Reserva reserva= new ReservaTestDataBuild().conCantidadPersonas(cantidadPersonas).build();
+		//assert
+		}catch (Exception e) {
+			assertEquals("error, La cantidad de personas por reserva debe estar entre 1 y 5",e.getMessage() );
+		}
+		
+		
+	}
 
 }
