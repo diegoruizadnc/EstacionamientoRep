@@ -2,7 +2,6 @@ package com.ceiba.reservasbarultimate.util;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
@@ -167,7 +166,7 @@ class UtilesTest {
 		 Utiles  mockedUtiles = mock(Utiles.class);
 		 int resultado = mockedUtiles.obtenerDiaSemana(fecha)-1;
 		 //assert
-		 assertNotEquals(4,resultado);
+		 assertEquals(5,resultado);
 		 
 		 
 	 }
