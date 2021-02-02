@@ -2,11 +2,8 @@ package com.ceiba.reservasbarultimate.dominio;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Month;
+
 import java.util.Date;
-import java.util.Locale;
 
 import org.junit.jupiter.api.Test;
 
@@ -109,19 +106,5 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		
 	}
 	
-/*	@Test
-	 void crearReservaCantidadPersonasNulo() throws Exception{
-		//arrange
-		Integer cantidadPersonas = 10;
-		//act
-		try {
-			Reserva reserva= new ReservaTestDataBuild().conCantidadPersonas(cantidadPersonas).build();
-		//assert
-		}catch (Exception e) {
-			assertEquals("error, La cantidad de personas por reserva debe estar entre 1 y 5",e.getMessage() );
-		}
-		
-		
-	}*/
 
 }

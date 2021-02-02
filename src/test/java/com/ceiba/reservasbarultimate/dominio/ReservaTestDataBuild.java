@@ -1,12 +1,10 @@
 package com.ceiba.reservasbarultimate.dominio;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 
-import lombok.Data;
 
 public class ReservaTestDataBuild {
 
@@ -26,23 +24,9 @@ public class ReservaTestDataBuild {
 		fechaReserva = new Date();
 		cantidadPersonas = 4;
 		precioReserva = 200000l;
-		//ponerFechaValida();
 
 	}
 	
-	
-	
-	/*public void ponerFechaValida(){
-		 String sDate1="28/01/2021";  
-		 Date fecha = null;
-		try {
-			fecha = new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		this.fechaReserva = fecha;
-	}*/
 
 	public ReservaTestDataBuild conIdMesa(Integer idMesa) {
 		this.idMesa = idMesa;
