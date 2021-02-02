@@ -3,8 +3,6 @@ package com.ceiba.reservasbarultimate.util;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.excepciones.CampoRequeridoExcepcion;
-import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.excepciones.CamposReservaExcepcion;
 
 public class Utiles {
 

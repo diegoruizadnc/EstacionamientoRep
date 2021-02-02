@@ -2,7 +2,11 @@ package com.ceiba.reservasbarultimate.dominio;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Date;
+import java.util.Locale;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,22 +18,7 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		
 	}
 	
-	/*@Test
-	 void crearReservaNumeroMesaNulo() throws Exception{
-		
-		//arrange
-		Date fecha = new Date();
-		//act
-		try {
-		@SuppressWarnings("unused")
-		Reserva reserva = new Reserva(null,10302l,fecha,5,180000l);
-		//assert
-		}catch (Exception e) {
-			assertEquals("error, El numero de mesa debe ser un valor entre 1 y 9", e.getMessage() );
-		}
-		
-		
-	}*/
+
 	
 	@Test
 	 void crearReservaNumeroMesaNulo() throws Exception{
@@ -40,7 +29,7 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		try {
 		@SuppressWarnings("unused")
 		// arrange
-        ReservaTestDataBuild reservaTestDataBuild = new ReservaTestDataBuild().conIdMesa(null);
+		Reserva reserva= new ReservaTestDataBuild().conIdMesa(null).build();
 		//assert
 		}catch (Exception e) {
 			assertEquals("error, El numero de mesa debe ser un valor entre 1 y 9", e.getMessage() );
@@ -57,7 +46,7 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		//act
 		try {
 		@SuppressWarnings("unused")
-		Reserva reserva = new Reserva(10,10302l,fecha,5,180000l);
+		Reserva reserva= new ReservaTestDataBuild().conIdMesa(10).build();
 		//assert
 		}catch (Exception e) {
 			assertEquals("error, El numero de mesa debe ser un valor entre 1 y 9", e.getMessage() );
@@ -74,7 +63,7 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		//act
 		try {
 		@SuppressWarnings("unused")
-		Reserva reserva = new Reserva(-6,10302l,fecha,5,180000l);
+		 Reserva reserva= new ReservaTestDataBuild().conIdMesa(-1).build();
 		//assert
 		}catch (Exception e) {
 			assertEquals("error, El numero de mesa debe ser un valor entre 1 y 9", e.getMessage() );
@@ -83,14 +72,19 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		
 	}
 	
+	
+		
+	
+	
 	@Test
 	 void crearReservaDiaNoValido() throws Exception{
 		
 		//arrange
-		Date fecha = new Date();
+		 String sDate1="25/01/2021";  
+		 Date fecha=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1); 
 		//act
-		try {
-		Reserva reserva = new Reserva(1,10302l,fecha,5,180000l);
+		try { 
+			Reserva reserva= new ReservaTestDataBuild().conFechaReserva(fecha).build();
 		//assert
 		}catch (Exception e) {
 			assertEquals("error, Solo puede hacer las reservas de miercoles a sabado",e.getMessage() );
@@ -105,10 +99,25 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		Date fecha = null;
 		//act
 		try {
-		Reserva reserva = new Reserva(1,10302l,null,5,180000l);
+			Reserva reserva= new ReservaTestDataBuild().conFechaReserva(fecha).build();
 		//assert
 		}catch (Exception e) {
 			assertEquals("error, Solo puede hacer las reservas de miercoles a sabado",e.getMessage() );
+		}
+		
+		
+	}
+	
+	@Test
+	 void crearReservaCantidadPersonasNulo() throws Exception{
+		//arrange
+		Integer cantidadPersonas = 10;
+		//act
+		try {
+			Reserva reserva= new ReservaTestDataBuild().conCantidadPersonas(cantidadPersonas).build();
+		//assert
+		}catch (Exception e) {
+			assertEquals("error, La cantidad de personas por reserva debe estar entre 1 y 5",e.getMessage() );
 		}
 		
 		
