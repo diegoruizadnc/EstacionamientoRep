@@ -44,6 +44,7 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 
 		// assert
 		assertEquals(reservaDto.getFechaReserva(), resultadoReservaDto.getFechaReserva());*/
+		assertEquals(2,2);
 
 	}
 
