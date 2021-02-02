@@ -5,13 +5,16 @@ import java.util.List;
 
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
 
-import lombok.Getter;
 
-@Getter
 public class MesaTestDataBuilder {
 	
 	private List<MesaDto> listaMesas = null;
 	
+	public List<MesaDto> getListaMesas() {
+		return listaMesas;
+	}
+
+
 	public MesaTestDataBuilder() {
 		this.listaMesas = listaMesasDisponbles();
 	}
