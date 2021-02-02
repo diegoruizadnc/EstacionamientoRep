@@ -12,7 +12,7 @@ public class MesaTestDataBuilder {
 
 
 	public MesaTestDataBuilder() {
-		this.listaMesas = listaMesasDisponbles();
+		listaMesas = listaMesasDisponbles();
 	}
 	
 	public  List<MesaDto> listaMesasDisponbles(){
