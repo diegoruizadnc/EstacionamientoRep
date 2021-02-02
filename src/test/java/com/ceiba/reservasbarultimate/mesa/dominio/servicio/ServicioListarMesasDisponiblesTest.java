@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
+import com.ceiba.reservasbarultimate.mesa.dominio.puerto.dao.MesaDao;
 import com.ceiba.reservasbarultimate.mesa.infraestructura.adaptador.dao.MesaDaoPersistente;
 
 
@@ -17,7 +18,7 @@ import com.ceiba.reservasbarultimate.mesa.infraestructura.adaptador.dao.MesaDaoP
  class ServicioListarMesasDisponiblesTest {
 	
 	@Autowired
-	MesaDaoPersistente  servicioListarMesasDidponibles;
+	MesaDao  servicioListarMesasDidponibles;
 	
 	@Test
 	 void listarMesasDisponiblesTest(){
