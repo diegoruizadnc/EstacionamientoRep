@@ -39,7 +39,6 @@ class FabricaReservaTest {
 		 
 		 //FabricaReserva  mockedfabricaReserva = mock(FabricaReserva.class);
 		
-
 		 
 		 Reserva resultadoReserva = mockedfabricaReserva.crearReserva(comandoReserva);
 		
