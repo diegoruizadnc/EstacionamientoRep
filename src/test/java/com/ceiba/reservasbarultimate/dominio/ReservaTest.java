@@ -8,14 +8,14 @@ import org.junit.jupiter.api.Test;
 
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 
-public class ReservaTest {
+ class ReservaTest {
 	
 	public ReservaTest() {
 		
 	}
 	
-	@Test
-	public void crearReservaNumeroMesaNulo() throws Exception{
+	/*@Test
+	 void crearReservaNumeroMesaNulo() throws Exception{
 		
 		//arrange
 		Date fecha = new Date();
@@ -29,10 +29,28 @@ public class ReservaTest {
 		}
 		
 		
+	}*/
+	
+	@Test
+	 void crearReservaNumeroMesaNulo() throws Exception{
+		
+		//arrange
+		Date fecha = new Date();
+		//act
+		try {
+		@SuppressWarnings("unused")
+		// arrange
+        ReservaTestDataBuild reservaTestDataBuild = new ReservaTestDataBuild().conIdMesa(null);
+		//assert
+		}catch (Exception e) {
+			assertEquals("error, El numero de mesa debe ser un valor entre 1 y 9", e.getMessage() );
+		}
+		
+		
 	}
 	
 	@Test
-	public void crearReservaNumeroMesaMayorNueve() throws Exception{
+	 void crearReservaNumeroMesaMayorNueve() throws Exception{
 		
 		//arrange
 		Date fecha = new Date();
@@ -49,7 +67,7 @@ public class ReservaTest {
 	}
 	
 	@Test
-	public void crearReservaNumeroMesaNegativo() throws Exception{
+	 void crearReservaNumeroMesaNegativo() throws Exception{
 		
 		//arrange
 		Date fecha = new Date();
@@ -66,7 +84,7 @@ public class ReservaTest {
 	}
 	
 	@Test
-	public void crearReservaDiaNoValido() throws Exception{
+	 void crearReservaDiaNoValido() throws Exception{
 		
 		//arrange
 		Date fecha = new Date();
@@ -82,7 +100,7 @@ public class ReservaTest {
 	}
 	
 	@Test
-	public void crearReservaFechaNulo() throws Exception{
+	 void crearReservaFechaNulo() throws Exception{
 		//arrange
 		Date fecha = null;
 		//act

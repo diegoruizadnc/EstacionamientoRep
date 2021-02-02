@@ -755,3 +755,33 @@ java.lang.NullPointerException: Cannot invoke "java.net.URI.toString()" because 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 12:53:32.447
 !MESSAGE executing callback sts4.classpath.jbZtTOCG SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:20.048
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:20.065
+!MESSAGE classpath=6 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:20.074
+!MESSAGE buffering callback sts4.classpath.jbZtTOCG demo_animales false 6
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:20.080
+!MESSAGE executing callback sts4.classpath.jbZtTOCG 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:20.118
+!MESSAGE executing callback sts4.classpath.jbZtTOCG SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:25.664
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:25.674
+!MESSAGE classpath=94 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:25.683
+!MESSAGE buffering callback sts4.classpath.jbZtTOCG demo_animales false 94
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:25.688
+!MESSAGE executing callback sts4.classpath.jbZtTOCG 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-02-01 20:14:25.703
+!MESSAGE executing callback sts4.classpath.jbZtTOCG SUCCESS [done]

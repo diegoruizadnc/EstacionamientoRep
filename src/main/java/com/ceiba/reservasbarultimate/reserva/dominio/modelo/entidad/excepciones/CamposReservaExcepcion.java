@@ -4,8 +4,8 @@ public class CamposReservaExcepcion extends RuntimeException {
 
 	private static final long serialVersionUID = 1924751740711140478L;
 
-	public CamposReservaExcepcion() {
-		super();
+	public CamposReservaExcepcion(String mensaje) {
+		super(mensaje);
 
 	}
 

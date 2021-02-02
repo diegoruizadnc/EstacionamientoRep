@@ -22,7 +22,7 @@ public class ManejadorExcepciones {
 
 		CODIGOS_ESTADO.put(CamposReservaExcepcion.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
 		CODIGOS_ESTADO.put(CampoRequeridoExcepcion.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
-
+		CODIGOS_ESTADO.put(CamposReservaExcepcion.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
 	}
 
 	@ExceptionHandler(Exception.class)
