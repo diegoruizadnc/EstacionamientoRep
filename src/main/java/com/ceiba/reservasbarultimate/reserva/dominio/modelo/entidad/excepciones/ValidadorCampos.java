@@ -55,7 +55,7 @@ public final class ValidadorCampos {
 
 		int dia = Utiles.obtenerDiaSemana(fechaReserva);
 
-		if (dia < 4 || dia == 7) {
+		if (dia < 3 || dia == 7) {
 			throw new CamposReservaExcepcion(errorMessage);
 		}
 	}
