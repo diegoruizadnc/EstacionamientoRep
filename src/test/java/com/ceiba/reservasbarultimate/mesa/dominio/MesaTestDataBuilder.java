@@ -8,7 +8,7 @@ import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
 
 public class MesaTestDataBuilder {
 	
-	/*private List<MesaDto> listaMesas;
+	private List<MesaDto> listaMesas;
 
 
 	public MesaTestDataBuilder() {
@@ -43,6 +43,6 @@ public class MesaTestDataBuilder {
 	
 	public List<MesaDto> getListaMesas() {
 		return listaMesas;
-	}*/
+	}
 
 }
