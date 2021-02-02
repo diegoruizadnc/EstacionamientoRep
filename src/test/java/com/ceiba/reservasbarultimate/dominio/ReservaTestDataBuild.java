@@ -8,7 +8,6 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 
 import lombok.Data;
 
-@Data
 public class ReservaTestDataBuild {
 
 	private Integer idMesa;
