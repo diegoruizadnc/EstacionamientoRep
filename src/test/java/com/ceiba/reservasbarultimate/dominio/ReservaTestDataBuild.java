@@ -26,13 +26,13 @@ public class ReservaTestDataBuild {
 		fechaReserva = new Date();
 		cantidadPersonas = 4;
 		precioReserva = 200000l;
-		ponerFechaValida();
+		//ponerFechaValida();
 
 	}
 	
 	
 	
-	public void ponerFechaValida(){
+	/*public void ponerFechaValida(){
 		 String sDate1="28/01/2021";  
 		 Date fecha = null;
 		try {
@@ -42,7 +42,7 @@ public class ReservaTestDataBuild {
 			e.printStackTrace();
 		}
 		this.fechaReserva = fecha;
-	}
+	}*/
 
 	public ReservaTestDataBuild conIdMesa(Integer idMesa) {
 		this.idMesa = idMesa;
