@@ -1,6 +1,8 @@
 package com.ceiba.reservasbarultimate.util;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class UtilesTest {
 	 
@@ -9,7 +11,10 @@ class UtilesTest {
 	 }
 	 
 	 @Test
-	 void cualqu() {
+	 void ElValorEsNumerico() {
+		 
+		 Boolean resultado = Utiles.esNumerico("6");
+		 assertEquals(true,resultado);
 		 
 	 }
 
