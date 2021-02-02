@@ -144,6 +144,134 @@ class UtilesTest {
 	 }
 	 
 	 
+	 
+	// Mesa4
+	 
+		 @Test
+		 void CalcularValorReservaMesa4DiaSabado() {
+			//arrange
+			 Integer numerMesa = 4;
+			 LocalDate localDate  = LocalDate.of(2021, 01, 29); // sabado
+			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			//act
+			 Utiles  mockedUtiles = mock(Utiles.class);
+			 @SuppressWarnings("static-access")
+			Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
+			 //assert
+			 assertEquals(150000l,resultado);
+			 
+		 }
+		 
+		 
+		 @Test
+		 void CalcularValorReservaMesa4DiaViernes() {
+			//arrange
+			 Integer numerMesa = 4;
+			 LocalDate localDate  = LocalDate.of(2021, 01, 28); // viernes
+			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			//act
+			 Utiles  mockedUtiles = mock(Utiles.class);
+			 @SuppressWarnings("static-access")
+			Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
+			 //assert
+			 assertEquals(142500l,resultado);
+			 
+		 }
+		 
+		 @Test
+		 void CalcularValorReservaMesa4DiaJueves() {
+			//arrange
+			 Integer numerMesa = 4;
+			 LocalDate localDate  = LocalDate.of(2021, 01, 27); // jueves
+			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			//act
+			 Utiles  mockedUtiles = mock(Utiles.class);
+			 @SuppressWarnings("static-access")
+			Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
+			 //assert
+			 assertEquals(135000l,resultado);
+			 
+		 }
+		 
+		 @Test
+		 void CalcularValorReservaMesa4DiaMiercoles() {
+			//arrange
+			 Integer numerMesa = 4;
+			 LocalDate localDate  = LocalDate.of(2021, 01, 26); // miercoles
+			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			//act
+			 Utiles  mockedUtiles = mock(Utiles.class);
+			 @SuppressWarnings("static-access")
+			Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
+			 //assert
+			 assertEquals(127500l,resultado);
+			 
+		 }
+		 
+		// Mesa 8
+		 
+			 @Test
+			 void CalcularValorReservaMesa8DiaSabado() {
+				//arrange
+				 Integer numerMesa = 8;
+				 LocalDate localDate  = LocalDate.of(2021, 01, 29); // sabado
+				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+				//act
+				 Utiles  mockedUtiles = mock(Utiles.class);
+				 @SuppressWarnings("static-access")
+				Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
+				 //assert
+				 assertEquals(100000l,resultado);
+				 
+			 }
+			 
+			 
+			 @Test
+			 void CalcularValorReservaMesa8DiaViernes() {
+				//arrange
+				 Integer numerMesa = 8;
+				 LocalDate localDate  = LocalDate.of(2021, 01, 28); // viernes
+				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+				//act
+				 Utiles  mockedUtiles = mock(Utiles.class);
+				 @SuppressWarnings("static-access")
+				Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
+				 //assert
+				 assertEquals(95000l,resultado);
+				 
+			 }
+			 
+			 @Test
+			 void CalcularValorReservaMesa8DiaJueves() {
+				//arrange
+				 Integer numerMesa = 8;
+				 LocalDate localDate  = LocalDate.of(2021, 01, 27); // jueves
+				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+				//act
+				 Utiles  mockedUtiles = mock(Utiles.class);
+				 @SuppressWarnings("static-access")
+				Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
+				 //assert
+				 assertEquals(90000l,resultado);
+				 
+			 }
+			 
+			 @Test
+			 void CalcularValorReservaMesa8DiaMiercoles() {
+				//arrange
+				 Integer numerMesa = 8;
+				 LocalDate localDate  = LocalDate.of(2021, 01, 26); // miercoles
+				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+				//act
+				 Utiles  mockedUtiles = mock(Utiles.class);
+				 @SuppressWarnings("static-access")
+				Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
+				 //assert
+				 assertEquals(85000l,resultado);
+				 
+			 }
+	 
+	 
 	 @Test
 	 void DiaDeLaSEmanaCorrecto() {
 		//arrange
