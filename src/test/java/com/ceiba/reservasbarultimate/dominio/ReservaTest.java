@@ -26,7 +26,6 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		//act
 		try {
 		@SuppressWarnings("unused")
-		// arrange
 		Reserva reserva= new ReservaTestDataBuild().conIdMesa(null).build();
 		//assert
 		}catch (Exception e) {
