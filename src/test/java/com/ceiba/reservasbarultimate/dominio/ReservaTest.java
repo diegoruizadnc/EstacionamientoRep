@@ -2,7 +2,8 @@ package com.ceiba.reservasbarultimate.dominio;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
@@ -70,16 +71,12 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 	}
 	
 	
-		
-	
-	
 	@Test
 	 void crearReservaDiaNoValido() throws Exception{
 		
 		//arrange
-		// String sDate1="25/01/2021";  
-		// Date fecha=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1); 
-		Date fecha = new Date();
+		LocalDate localDate  = LocalDate.of(2021, 01, 25);
+	    Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		try { 
 			Reserva reserva= new ReservaTestDataBuild().conFechaReserva(fecha).build();
@@ -116,6 +113,37 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		//assert
 		}catch (Exception e) {
 			assertEquals("error, La cantidad de personas por reserva debe estar entre 1 y 5",e.getMessage() );
+		}
+		
+		
+	}
+	
+	@Test
+	 void crearReservaCantidadPersonasNulo() throws Exception{
+		//arrange
+		Integer cantidadPersonas = null;
+		//act
+		try {
+			Reserva reserva= new ReservaTestDataBuild().conCantidadPersonas(cantidadPersonas).build();
+		//assert
+		}catch (Exception e) {
+			assertEquals("error, La cantidad de personas por reserva debe estar entre 1 y 5",e.getMessage() );
+		}
+		
+		
+	}
+	
+	
+	@Test
+	 void crearReservaPagandoCompletoEnDiaDeDescuento() throws Exception{
+		//arrange
+		Long precioReserva = 200000l;
+		//act
+		try {
+			Reserva reserva= new ReservaTestDataBuild().build();
+		//assert
+		}catch (Exception e) {
+			assertEquals("error, El valor que intenta pagar es incorrecto, usted debe cancelar: 190000",e.getMessage() );
 		}
 		
 		

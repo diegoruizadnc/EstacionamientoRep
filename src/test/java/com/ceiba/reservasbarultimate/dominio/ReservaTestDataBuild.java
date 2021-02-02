@@ -34,8 +34,7 @@ public class ReservaTestDataBuild {
 	
 	
 	public void ponerFechaValida(){
-	   LocalDate localDate  = LocalDate.of(2021, 01, 28);
-	  // Date date = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
+	    LocalDate localDate  = LocalDate.of(2021, 01, 28);
 	    Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		this.fechaReserva = date;
 	}
