@@ -15,7 +15,7 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.excepciones.
 @ControllerAdvice
 public class ManejadorExcepciones {
 
-	private static final String ERROR_INESPERADO_CONTACTAR_ADMIN = "Error inesperado servicio gestionParqueadero, contacta al admin";
+	private static final String ERROR_INESPERADO_CONTACTAR_ADMIN = "Error inesperado en reservas Bar, contacte al administrador";
 	private static final ConcurrentHashMap<String, Integer> CODIGOS_ESTADO = new ConcurrentHashMap<>();
 
 	public ManejadorExcepciones() {

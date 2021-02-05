@@ -8,6 +8,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -22,7 +23,9 @@ class FabricaReservaTest {
 	
 	 @Autowired
 	 FabricaReserva  mockedfabricaReserva ;
-	
+	 
+	 
+	 
 	 
 	 public FabricaReservaTest(){
 		 
@@ -31,11 +34,20 @@ class FabricaReservaTest {
 	 @Test
 	 void crearUnaReservaAPartirDeUnComandoReserva() {
 		 
+		 
 			//arrange
 		 LocalDate localDate  = LocalDate.of(2021, 01, 29);
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		 ComandoReserva comandoReserva= new ComandoReservaTestBuild().conFechaReserva(fecha).build();
 		 Reserva reserva= new ReservaTestDataBuild().conFechaReserva(fecha).build();
+		 
+		 
+		 //////ejemplo alexander ///////
+		 
+		 FabricaReserva  mockedfabricaReserva2 = Mockito.mock(FabricaReserva.class); 
+		 Mockito.when(mockedfabricaReserva2.crearReserva(comandoReserva)).thenReturn(reserva);
+		 
+		 /////////////
 		 
 		 //FabricaReserva  mockedfabricaReserva = mock(FabricaReserva.class);
 		

@@ -18,9 +18,7 @@ public class ReservaPersistente  {
 	//@GeneratedValue(strategy = GenerationType.AUTO)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idReserva;
-	@Column(nullable = false)
 	private int idMesa;
-	@Column(nullable = false)
 	private Long idUsuario;
 	private Date fechaReserva;
 	private int cantidadPersonas;

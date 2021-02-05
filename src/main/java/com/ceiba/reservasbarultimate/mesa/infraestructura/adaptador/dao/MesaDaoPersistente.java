@@ -19,6 +19,7 @@ public class MesaDaoPersistente implements MesaDao {
 	@SuppressWarnings("unused")
 	private static final Logger LOG=LogManager.getLogger(MesaDaoPersistente.class);
 	private static final String BUSCA_MESAS_DISPONIBLES = "Mesas.byEstaDisponible";
+	private static final String BUSCAR_MESA_POR_ID = "Mesas.byId";
 	
 	private EntityManager entityManager;
 	
@@ -41,5 +42,20 @@ public class MesaDaoPersistente implements MesaDao {
 			
 		return listMesaDto;
 	}
+
+	@Override
+	public MesaDto buscarMesaPorId(Integer idMesa) {
+		MesaPersistente mesaPersistente=new MesaPersistente();
+		try {
+			Query query=entityManager.createNamedQuery(BUSCAR_MESA_POR_ID);
+			query.setParameter("idMesa",idMesa);
+			mesaPersistente=(MesaPersistente) query.getSingleResult();
+		} catch (Exception e) {
+			LOG.info(e);
+		}
+		return MapeoMesa.convertirToMesaDto(mesaPersistente);
+	}
+
+
 
 }

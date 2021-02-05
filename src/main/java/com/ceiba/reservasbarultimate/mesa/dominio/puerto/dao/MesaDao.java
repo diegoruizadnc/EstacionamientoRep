@@ -7,5 +7,7 @@ import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
 public interface MesaDao {
 	
 	List<MesaDto> listarMesasDisponibles();
+	MesaDto buscarMesaPorId(Integer mesaId);
+	
 
 }

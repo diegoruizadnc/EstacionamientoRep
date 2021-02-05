@@ -22,7 +22,7 @@ public class Utiles {
 	public static int obtenerDiaSemana(Date date) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
-		return cal.get(Calendar.DAY_OF_WEEK);
+		return cal.get(Calendar.DAY_OF_WEEK) - 1;
 	}
 
 	public static Long calcularValorReserva(Date fechaReserva, int idMesa) {
