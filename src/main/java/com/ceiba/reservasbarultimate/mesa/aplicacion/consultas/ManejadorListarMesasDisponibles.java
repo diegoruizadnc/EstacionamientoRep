@@ -20,6 +20,6 @@ public class ManejadorListarMesasDisponibles {
     }
 
     //public List<MesaDto> ejecutar(){ return this.mesaDao.listarMesasDisponibles(); }
-    public List<MesaDto> ejecutar(){ return this.servicioListarMesasDidponibles.listarMesasDisponibles(); }
+    public List<MesaDto> ejecutar(){ return this.servicioListarMesasDidponibles.ejecutar(); }
 
 }

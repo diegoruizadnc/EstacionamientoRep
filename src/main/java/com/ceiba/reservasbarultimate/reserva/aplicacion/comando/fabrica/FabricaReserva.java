@@ -11,6 +11,6 @@ public class FabricaReserva {
 	public Reserva crearReserva(ComandoReserva comandoReserva){
 
 		return new Reserva(comandoReserva.getIdMesa(), comandoReserva.getIdUsuario(),
-				comandoReserva.getFechaReserva(), comandoReserva.getCantidadPersonas(),comandoReserva.getPrecioReserva());
+				comandoReserva.getCantidadPersonas());
 	}
 }

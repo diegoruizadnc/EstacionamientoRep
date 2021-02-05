@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
+
 public class Utiles {
 
 	private Utiles() {
@@ -18,6 +19,25 @@ public class Utiles {
 			return false;
 		}
 	}
+	
+	
+	public static Boolean validaMaxCaracteres(String cadenaIn, Long cantidad){
+		if(cadenaIn.length()>cantidad){
+			return false;
+		}
+		else
+			return true;
+	}
+	
+	public static Boolean validaMinimaCaracteres(String cadenaIn, Long cantidad){
+		if(cadenaIn.length()<cantidad){
+			return false;
+		}
+		else
+			return true;
+	}
+	
+	
 
 	public static int obtenerDiaSemana(Date date) {
 		Calendar cal = Calendar.getInstance();

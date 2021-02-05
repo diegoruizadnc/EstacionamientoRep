@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.reservasbarultimate.mesa.dominio.ConversorMesaDtoAMesa;
+import com.ceiba.reservasbarultimate.mesa.dominio.excepciones.MesaMensajeExcepcion;
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.entidad.Mesa;
 import com.ceiba.reservasbarultimate.mesa.dominio.puerto.dao.MesaDao;
@@ -16,6 +17,9 @@ public class ServicioCambiarDisponibilidadMesa {
 	private final MesaDao mesaDao;
 	private final MesaRepositorio mesaRepositorio;
 	private final ConversorMesaDtoAMesa conversorMesaDtoAMesa;
+	
+	private static final String MESA_NO_DISPONIBLE="Lo sentimos, La mesa que intentas reservar NO esta disponible";
+
 
 	public ServicioCambiarDisponibilidadMesa(MesaDao mesaDao, MesaRepositorio mesaRepositorio,
 			ConversorMesaDtoAMesa conversorMesaDtoAMesa) {
@@ -41,7 +45,7 @@ public class ServicioCambiarDisponibilidadMesa {
 		if (mesaDto.getEstaDisponible())
 			return true;
 		else
-			return false;
+			throw new MesaMensajeExcepcion(MESA_NO_DISPONIBLE);
 	}
 
 }
