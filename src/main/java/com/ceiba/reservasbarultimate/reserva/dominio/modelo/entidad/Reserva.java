@@ -1,5 +1,7 @@
 package com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 
@@ -14,6 +16,9 @@ public class Reserva {
 	private static final String FECHA_RESERVA_INCORRECTA = "error, Solo puede hacer las reservas de miercoles a sabado ";
 	private static final Long LONGITUD_MINIMA_DOCUMENTO = 6l;
 	private static final Long LONGITUD_MAXIMA_DOCUMENTO = 12l;
+	LocalDate localDate  = LocalDate.of(2021, 02, 10);
+	Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+	private  final Date FECHA_HOY = date;
 
 	
 	private Integer idMesa;
@@ -23,15 +28,19 @@ public class Reserva {
 	private Long precioReserva;
 
 	public Reserva( Integer idMesa, Long idUsuario, Integer cantidadPersonas) {
+		
+		
 
 		ValidadorCamposReserva.validarNumeroMesa(idMesa, ID_MESA_MESA_VALIDO);
 		ValidadorCamposReserva.validarCantidadPersonas(cantidadPersonas, CANTIDAD_PERSONAS_NO_VALIDAS);
 		ValidadorCamposReserva.validarDocumentoUsuarioValido(idUsuario,LONGITUD_MINIMA_DOCUMENTO,LONGITUD_MAXIMA_DOCUMENTO, DOCUMENTO_USUARIO_INCORRECTO );
-		ValidadorCamposReserva.validarDiaReservaValido(FECHA_RESERVA_INCORRECTA);
+		ValidadorCamposReserva.validarDiaReservaValido(FECHA_HOY, FECHA_RESERVA_INCORRECTA);
 		
+		 
+		    
 		this.idMesa = idMesa;
 		this.idUsuario = idUsuario;
-		this.fechaReserva = new Date();
+		this.fechaReserva = FECHA_HOY;
 		this.cantidadPersonas = cantidadPersonas;
 	}
 

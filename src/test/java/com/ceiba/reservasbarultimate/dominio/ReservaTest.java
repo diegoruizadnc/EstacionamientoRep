@@ -111,7 +111,7 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 			Reserva reserva= new ReservaTestDataBuild().conCantidadPersonas(cantidadPersonas).build();
 		//assert
 		}catch (Exception e) {
-			assertEquals("error, La cantidad de personas por reserva debe estar entre 1 y 5",e.getMessage() );
+			assertEquals("error, Debe especificar la cantidad de personas por mesa: maximo 5 personas",e.getMessage() );
 		}
 		
 		
@@ -126,7 +126,7 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 			Reserva reserva= new ReservaTestDataBuild().conCantidadPersonas(cantidadPersonas).build();
 		//assert
 		}catch (Exception e) {
-			assertEquals("error, La cantidad de personas por reserva debe estar entre 1 y 5",e.getMessage() );
+			assertEquals("error, Debe especificar la cantidad de personas por mesa: maximo 5 personas",e.getMessage() );
 		}
 		
 		

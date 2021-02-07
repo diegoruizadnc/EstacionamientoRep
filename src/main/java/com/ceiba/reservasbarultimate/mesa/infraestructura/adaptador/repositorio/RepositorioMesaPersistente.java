@@ -17,15 +17,6 @@ private EntityManager entityManager;
 		this.entityManager=entityManager;
 	}
 
-	/*@Override
-	public void cambiarDisponibilidadMesa(Integer idMesa) {
-		
-		MesaPersistente mesaActualizarDisponibilidad= entityManager.find(MesaPersistente.class, idMesa);
-		mesaActualizarDisponibilidad.setEstaDisponible(false);
-		entityManager.merge(mesaActualizarDisponibilidad);
-		
-	}*/
-
 	@Override
 	public void actualizar(Mesa mesa) {
 		MesaPersistente mesaPersistente = ConversorMesaAMesaPersistente.ejecutar(mesa);

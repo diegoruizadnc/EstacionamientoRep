@@ -33,7 +33,6 @@ public class MesaDaoPersistente implements MesaDao {
 		List<MesaDto> listMesaDto= new ArrayList<>();
 		Query queryListMesasAct=entityManager.createNamedQuery(BUSCA_MESAS_DISPONIBLES);
 		
-		
 		@SuppressWarnings("unchecked")
 		List<MesaPersistente> listaMesasDisponibles = queryListMesasAct.getResultList();
 		for (MesaPersistente mesaPersistente : listaMesasDisponibles) {

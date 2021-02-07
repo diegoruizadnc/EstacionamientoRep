@@ -20,7 +20,6 @@ public class ConversorMesaDtoAMesa {
 		mesa.setFila(mesaDto.getFila());
 		mesa.setPrecioBase(mesaDto.getPrecioBase());
 		mesa.setEstaDisponible(mesaDto.getEstaDisponible());
-
 		
 		return mesa;
 	}

@@ -1,4 +1,4 @@
-package com.ceiba.reservasbarultimate.mesa.infraestructura.error;
+package com.ceiba.reservasbarultimate.comun.infraestructura.error;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -7,21 +7,24 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.ceiba.reservasbarultimate.mesa.dominio.excepciones.MesaMensajeExcepcion;
-import com.ceiba.reservasbarultimate.reserva.infraestructura.error.Error;
-
-
+import com.ceiba.reservasbarultimate.comun.dominio.excepciones.CampoRequeridoExcepcion;
+import com.ceiba.reservasbarultimate.comun.dominio.excepciones.ConflictoEstadoRecursoExcepcion;
+import com.ceiba.reservasbarultimate.comun.dominio.excepciones.DatosNoEncontradosExcepcion;
+import com.ceiba.reservasbarultimate.comun.dominio.excepciones.ValorNoValidoExcepcion;
 
 @ControllerAdvice
-public class ManejadorExcepcionesMesa {
+public class ManejadorErrores {
 
 	private static final String ERROR_INESPERADO_CONTACTAR_ADMIN = "Error inesperado en reservas Bar, contacte al administrador";
 	private static final ConcurrentHashMap<String, Integer> CODIGOS_ESTADO = new ConcurrentHashMap<>();
 
-	public ManejadorExcepcionesMesa() {
+	public ManejadorErrores() {
 
-		CODIGOS_ESTADO.put(MesaMensajeExcepcion.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
-
+		CODIGOS_ESTADO.put(CampoRequeridoExcepcion.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
+		CODIGOS_ESTADO.put(ValorNoValidoExcepcion.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
+		CODIGOS_ESTADO.put(DatosNoEncontradosExcepcion.class.getSimpleName(), HttpStatus.NOT_FOUND.value());
+		CODIGOS_ESTADO.put(ConflictoEstadoRecursoExcepcion.class.getSimpleName(), HttpStatus.CONFLICT.value());
+		
 	}
 
 	@ExceptionHandler(Exception.class)

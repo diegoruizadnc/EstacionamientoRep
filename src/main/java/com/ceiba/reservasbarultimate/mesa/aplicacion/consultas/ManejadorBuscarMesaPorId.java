@@ -14,7 +14,6 @@ public class ManejadorBuscarMesaPorId {
         this.mesaDao = mesaDao;
     }
 
-    //public List<MesaDto> ejecutar(){ return this.mesaDao.listarMesasDisponibles(); }
     public MesaDto ejecutar(Integer mesaId){ return this.mesaDao.buscarMesaPorId(mesaId); }
 
 }

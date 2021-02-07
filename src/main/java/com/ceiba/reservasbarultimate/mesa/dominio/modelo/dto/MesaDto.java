@@ -1,8 +1,6 @@
 package com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 
 @Data
 public class MesaDto {

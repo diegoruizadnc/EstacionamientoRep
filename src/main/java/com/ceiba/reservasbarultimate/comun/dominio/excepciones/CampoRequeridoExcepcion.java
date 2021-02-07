@@ -1,4 +1,4 @@
-package com.ceiba.reservasbarultimate.reserva.dominio.excepciones;
+package com.ceiba.reservasbarultimate.comun.dominio.excepciones;
 
 public class CampoRequeridoExcepcion extends RuntimeException{
 

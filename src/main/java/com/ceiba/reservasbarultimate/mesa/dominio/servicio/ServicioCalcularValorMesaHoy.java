@@ -5,31 +5,26 @@ import java.util.Date;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.reservasbarultimate.util.Utiles;
+
+import lombok.NoArgsConstructor;
 @Component
+@NoArgsConstructor
 public class ServicioCalcularValorMesaHoy {
 	
-	public ServicioCalcularValorMesaHoy(){
-		
-	}
 	
-	public Long ejecutar(Long precioBaseMesa) {
+	public Long ejecutar(Long precioBaseMesa, Date fechaReserva ) {
 
-		float descuentoPorDia = 0;
-		Long precioNetoReserva;
-		Date fechaReserva = new Date();
+		float descuentoPorDia = calcularDescuentoReservaSegunDia(fechaReserva);
 
-		descuentoPorDia = calcularDescuentoReservaSegunDia(fechaReserva);
-
-		precioNetoReserva = (long) (precioBaseMesa - (precioBaseMesa * descuentoPorDia));
-
-		return precioNetoReserva;
+		return  (long) (precioBaseMesa - (precioBaseMesa * descuentoPorDia));
 
 	}
 
 	public float calcularDescuentoReservaSegunDia(Date fechaReserva) {
 
-		int dia = Utiles.obtenerDiaSemana(fechaReserva);
 		float descuento = 0f;
+		
+		int dia = Utiles.obtenerDiaSemana(fechaReserva);
 
 		if (dia == 3)
 			descuento = (float) 0.15;

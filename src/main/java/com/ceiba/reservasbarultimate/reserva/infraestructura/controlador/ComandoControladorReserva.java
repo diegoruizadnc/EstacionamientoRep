@@ -20,7 +20,7 @@ public class ComandoControladorReserva {
 		this.manejadorCrearReserva=manejadorCrearReserva;
 	}
 	
-	@PostMapping("/crear")
+	@PostMapping
 	public ReservaDto agregaRegistroReserva(@RequestBody ComandoReserva comandoReserva){
 		return manejadorCrearReserva.ejecutar(comandoReserva);
 	}

@@ -1,4 +1,4 @@
-package com.ceiba.reservasbarultimate.reserva.infraestructura.error;
+package com.ceiba.reservasbarultimate.comun.infraestructura.error;
 
 import lombok.Getter;
 

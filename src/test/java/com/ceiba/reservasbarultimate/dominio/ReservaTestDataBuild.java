@@ -65,6 +65,6 @@ public class ReservaTestDataBuild {
 	}
 	
 	 public Reserva build() {
-	        return new Reserva(idMesa,idUsuario, fechaReserva,cantidadPersonas,precioReserva);
-	    }*
+	        return new Reserva(idMesa,idUsuario,cantidadPersonas);
+	    }
 }

@@ -1,8 +1,10 @@
 package com.ceiba.reservasbarultimate.mesa.dominio.servicio;
 
+import java.util.Date;
 import java.util.List;
 import org.springframework.stereotype.Component;
-import com.ceiba.reservasbarultimate.mesa.dominio.excepciones.MesaMensajeExcepcion;
+
+import com.ceiba.reservasbarultimate.comun.dominio.excepciones.ConflictoEstadoRecursoExcepcion;
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
 import com.ceiba.reservasbarultimate.mesa.dominio.puerto.dao.MesaDao;
 
@@ -21,24 +23,20 @@ public class ServicioListarMesasDidponibles {
 
 	public List<MesaDto> ejecutar() {
 
-		List<MesaDto> listaMesaDto = null;
-		List<MesaDto> listaMesaDtoConPrecioDeDescuento = null;
-
-		listaMesaDto = mesaDao.listarMesasDisponibles();
+		List<MesaDto> listaMesaDto = mesaDao.listarMesasDisponibles();
 		
 		if(listaMesaDto == null || listaMesaDto.isEmpty()) {
-			throw new MesaMensajeExcepcion(BAR_SIN_MESAS_DISPONIBLES);
+			throw new ConflictoEstadoRecursoExcepcion(BAR_SIN_MESAS_DISPONIBLES);
 		}
 		
-		listaMesaDtoConPrecioDeDescuento = ponerPrecioMesaSegunDia(listaMesaDto);
+		return ponerPrecioMesaSegunDia(listaMesaDto);
 
-		return listaMesaDtoConPrecioDeDescuento;
 	}
 
 	public List<MesaDto> ponerPrecioMesaSegunDia(List<MesaDto> listaMesaDto) {
-
+        Date fechaHoy = new Date();
 		for (MesaDto mesadto : listaMesaDto) {
-			mesadto.setPrecioConDescuentoHoy(servicioCalcularValorMesaHoy.ejecutar(mesadto.getPrecioBase()));
+			mesadto.setPrecioConDescuentoHoy(servicioCalcularValorMesaHoy.ejecutar(mesadto.getPrecioBase(), fechaHoy));
 		}
 
 		return listaMesaDto;

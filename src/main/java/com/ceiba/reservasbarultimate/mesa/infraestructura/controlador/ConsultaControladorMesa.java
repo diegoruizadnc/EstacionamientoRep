@@ -10,7 +10,7 @@ import com.ceiba.reservasbarultimate.mesa.aplicacion.consultas.ManejadorListarMe
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
 
 @RestController
-@RequestMapping("/mesa")
+@RequestMapping("/mesas")
 public class ConsultaControladorMesa {
 	
 	private final ManejadorListarMesasDisponibles manejadorListarMesasDisponibles;
@@ -20,7 +20,7 @@ public class ConsultaControladorMesa {
 		this.manejadorListarMesasDisponibles=manejadorListarMesasDisponibles;
 	}
 	
-	@GetMapping("/listar")
+	@GetMapping
 	public List<MesaDto> listarMesasDisponibles(){
 
 		return manejadorListarMesasDisponibles.ejecutar();
