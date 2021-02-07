@@ -21,7 +21,7 @@ class UtilesTest {
 	 void CalcularValorReservaMesa1DiaSabado() {
 		//arrange
 		 Integer numerMesa = 1;
-		 LocalDate localDate  = LocalDate.of(2021, 01, 29); // sabado
+		 LocalDate localDate  = LocalDate.of(2021, 02, 13); // sabado
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
@@ -37,7 +37,7 @@ class UtilesTest {
 	 void CalcularValorReservaMesa1DiaViernes() {
 		//arrange
 		 Integer numerMesa = 1;
-		 LocalDate localDate  = LocalDate.of(2021, 01, 28); // viernes
+		 LocalDate localDate  = LocalDate.of(2021, 02, 12); // viernes
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
@@ -52,7 +52,7 @@ class UtilesTest {
 	 void CalcularValorReservaMesa1DiaJueves() {
 		//arrange
 		 Integer numerMesa = 1;
-		 LocalDate localDate  = LocalDate.of(2021, 01, 27); // jueves
+		 LocalDate localDate  = LocalDate.of(2021, 02, 11); // jueves
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
@@ -67,7 +67,7 @@ class UtilesTest {
 	 void CalcularValorReservaMesa1DiaMiercoles() {
 		//arrange
 		 Integer numerMesa = 1;
-		 LocalDate localDate  = LocalDate.of(2021, 01, 26); // miercoles
+		 LocalDate localDate  = LocalDate.of(2021, 02, 10); // miercoles
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
@@ -86,7 +86,7 @@ class UtilesTest {
 	 void CalcularValorReservaMesa2DiaSabado() {
 		//arrange
 		 Integer numerMesa = 2;
-		 LocalDate localDate  = LocalDate.of(2021, 01, 29); // sabado
+		 LocalDate localDate  = LocalDate.of(2021, 02, 13); // sabado
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
@@ -102,7 +102,7 @@ class UtilesTest {
 	 void CalcularValorReservaMesa2DiaViernes() {
 		//arrange
 		 Integer numerMesa = 2;
-		 LocalDate localDate  = LocalDate.of(2021, 01, 28); // viernes
+		 LocalDate localDate  = LocalDate.of(2021, 02, 12); // viernes
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
@@ -117,7 +117,7 @@ class UtilesTest {
 	 void CalcularValorReservaMesa2DiaJueves() {
 		//arrange
 		 Integer numerMesa = 2;
-		 LocalDate localDate  = LocalDate.of(2021, 01, 27); // jueves
+		 LocalDate localDate  = LocalDate.of(2021, 02, 11); // jueves
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
@@ -132,7 +132,7 @@ class UtilesTest {
 	 void CalcularValorReservaMesa2DiaMiercoles() {
 		//arrange
 		 Integer numerMesa = 2;
-		 LocalDate localDate  = LocalDate.of(2021, 01, 26); // miercoles
+		 LocalDate localDate  = LocalDate.of(2021, 02, 10); // miercoles
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
@@ -151,7 +151,7 @@ class UtilesTest {
 		 void CalcularValorReservaMesa4DiaSabado() {
 			//arrange
 			 Integer numerMesa = 4;
-			 LocalDate localDate  = LocalDate.of(2021, 01, 29); // sabado
+			 LocalDate localDate  = LocalDate.of(2021, 02, 13); // sabado
 			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 			//act
 			 Utiles  mockedUtiles = mock(Utiles.class);
@@ -167,7 +167,7 @@ class UtilesTest {
 		 void CalcularValorReservaMesa4DiaViernes() {
 			//arrange
 			 Integer numerMesa = 4;
-			 LocalDate localDate  = LocalDate.of(2021, 01, 28); // viernes
+			 LocalDate localDate  = LocalDate.of(2021, 02, 12); // viernes
 			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 			//act
 			 Utiles  mockedUtiles = mock(Utiles.class);
@@ -182,7 +182,7 @@ class UtilesTest {
 		 void CalcularValorReservaMesa4DiaJueves() {
 			//arrange
 			 Integer numerMesa = 4;
-			 LocalDate localDate  = LocalDate.of(2021, 01, 27); // jueves
+			 LocalDate localDate  = LocalDate.of(2021, 02, 11); // jueves
 			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 			//act
 			 Utiles  mockedUtiles = mock(Utiles.class);
@@ -197,7 +197,7 @@ class UtilesTest {
 		 void CalcularValorReservaMesa4DiaMiercoles() {
 			//arrange
 			 Integer numerMesa = 4;
-			 LocalDate localDate  = LocalDate.of(2021, 01, 26); // miercoles
+			 LocalDate localDate  = LocalDate.of(2021, 02, 10); // miercoles
 			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 			//act
 			 Utiles  mockedUtiles = mock(Utiles.class);
@@ -214,7 +214,7 @@ class UtilesTest {
 			 void CalcularValorReservaMesa8DiaSabado() {
 				//arrange
 				 Integer numerMesa = 8;
-				 LocalDate localDate  = LocalDate.of(2021, 01, 29); // sabado
+				 LocalDate localDate  = LocalDate.of(2021, 02, 13); // sabado
 				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 				//act
 				 Utiles  mockedUtiles = mock(Utiles.class);
@@ -230,7 +230,7 @@ class UtilesTest {
 			 void CalcularValorReservaMesa8DiaViernes() {
 				//arrange
 				 Integer numerMesa = 8;
-				 LocalDate localDate  = LocalDate.of(2021, 01, 28); // viernes
+				 LocalDate localDate  = LocalDate.of(2021, 02, 12); // viernes
 				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 				//act
 				 Utiles  mockedUtiles = mock(Utiles.class);
@@ -245,7 +245,7 @@ class UtilesTest {
 			 void CalcularValorReservaMesa8DiaJueves() {
 				//arrange
 				 Integer numerMesa = 8;
-				 LocalDate localDate  = LocalDate.of(2021, 01, 27); // jueves
+				 LocalDate localDate  = LocalDate.of(2021, 02, 11); // jueves
 				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 				//act
 				 Utiles  mockedUtiles = mock(Utiles.class);
@@ -260,7 +260,7 @@ class UtilesTest {
 			 void CalcularValorReservaMesa8DiaMiercoles() {
 				//arrange
 				 Integer numerMesa = 8;
-				 LocalDate localDate  = LocalDate.of(2021, 01, 26); // miercoles
+				 LocalDate localDate  = LocalDate.of(2021, 02, 10); // miercoles
 				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 				//act
 				 Utiles  mockedUtiles = mock(Utiles.class);
@@ -275,11 +275,11 @@ class UtilesTest {
 	 @Test
 	 void DiaDeLaSEmanaCorrecto() {
 		//arrange
-			LocalDate localDate  = LocalDate.of(2021, 01, 25);
+			LocalDate localDate  = LocalDate.of(2021, 02, 01);
 		    Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
-		 int resultado = mockedUtiles.obtenerDiaSemana(fecha)-1;
+		 int resultado = mockedUtiles.obtenerDiaSemana(fecha);
 		 //assert
 		 assertEquals(1,resultado);
 		 
@@ -288,11 +288,11 @@ class UtilesTest {
 	 @Test
 	 void DiaDeLaSEmanaInCorrecto() {
 		//arrange
-			LocalDate localDate  = LocalDate.of(2021, 01, 29);
+			LocalDate localDate  = LocalDate.of(2021, 02, 12);
 		    Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
-		 int resultado = mockedUtiles.obtenerDiaSemana(fecha)-1;
+		 int resultado = mockedUtiles.obtenerDiaSemana(fecha);
 		 //assert
 		 assertEquals(5,resultado);
 		 
