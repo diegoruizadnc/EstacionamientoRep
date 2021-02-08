@@ -6,7 +6,7 @@ import com.ceiba.reservasbarultimate.comun.dominio.excepciones.CampoRequeridoExc
 import com.ceiba.reservasbarultimate.comun.dominio.excepciones.ValorNoValidoExcepcion;
 import com.ceiba.reservasbarultimate.util.Utiles;
 
-public class ValidadorCamposReserva {
+public final class ValidadorCamposReserva {
 
 	private ValidadorCamposReserva() {
 	}

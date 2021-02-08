@@ -3,7 +3,7 @@ package com.ceiba.reservasbarultimate.mesa.infraestructura.adaptador.repositorio
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.entidad.Mesa;
 import com.ceiba.reservasbarultimate.mesa.infraestructura.adaptador.persistencia.MesaPersistente;
 
-public class ConversorMesaAMesaPersistente {
+public final class ConversorMesaAMesaPersistente {
 	
 	private ConversorMesaAMesaPersistente() {
 

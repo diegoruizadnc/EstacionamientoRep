@@ -3,7 +3,7 @@ package com.ceiba.reservasbarultimate.mesa.infraestructura.adaptador.dao;
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
 import com.ceiba.reservasbarultimate.mesa.infraestructura.adaptador.persistencia.MesaPersistente;
 
-public class MapeoMesa {
+public final class MapeoMesa {
 	
 private  MapeoMesa() {
 		
