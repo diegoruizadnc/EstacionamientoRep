@@ -1,9 +1,5 @@
 package com.ceiba.reservasbarultimate.reserva.aplicacion.comando;
 
-
-import lombok.Getter;
-
-@Getter
 public class ComandoReserva {
 
 	public ComandoReserva() {
@@ -18,8 +14,21 @@ public class ComandoReserva {
 			this.idUsuario = idUsuario;
 			this.cantidadPersonas = cantidadPersonas;
 		}
-	
-	
+
+		public Integer getIdMesa() {
+			return idMesa;
+		}
+
+
+		public Long getIdUsuario() {
+			return idUsuario;
+		}
+
+
+		public Integer getCantidadPersonas() {
+			return cantidadPersonas;
+		}
+
 	
 
 }
