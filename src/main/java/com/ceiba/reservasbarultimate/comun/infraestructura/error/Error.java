@@ -1,8 +1,6 @@
 package com.ceiba.reservasbarultimate.comun.infraestructura.error;
 
-import lombok.Getter;
 
-@Getter
 public class Error {
 	
 	private String nombreExcepcion;
@@ -11,6 +9,14 @@ public class Error {
 	public Error(String nombreExcepcion, String mensaje){
 		this.nombreExcepcion=nombreExcepcion;
 		this.mensaje=mensaje;
+	}
+
+	public String getNombreExcepcion() {
+		return nombreExcepcion;
+	}
+
+	public String getMensaje() {
+		return mensaje;
 	}
 
 }
