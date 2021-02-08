@@ -1,18 +1,14 @@
 package com.ceiba.reservasbarultimate.dominio;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
-
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.dto.ReservaDto;
@@ -155,19 +151,6 @@ import com.ceiba.reservasbarultimate.reserva.dominio.servicio.ServicioCrearReser
 	}
 	
 	
-	@Test
-	 void crearReservaPagandoCompletoEnDiaDeDescuento() throws Exception{
-		//arrange
-		Long precioReserva = 200000l;
-		//act
-		try {
-			Reserva reserva= new ReservaTestDataBuild().build();
-		//assert
-		}catch (Exception e) {
-			assertEquals("error, El valor que intenta pagar es incorrecto, usted debe cancelar: 190000",e.getMessage() );
-		}
-		
-		
-	}
+
 
 }

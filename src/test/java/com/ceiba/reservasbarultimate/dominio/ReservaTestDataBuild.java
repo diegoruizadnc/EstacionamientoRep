@@ -23,7 +23,7 @@ public class ReservaTestDataBuild {
 		
 		 
 		idMesa = 1;
-		idUsuario = 345678l;
+		idUsuario = 34567899l;
 		fechaReserva = new Date();
 		cantidadPersonas = 4;
 		precioReserva = 200000l;

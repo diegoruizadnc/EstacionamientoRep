@@ -1,7 +1,6 @@
 package com.ceiba.reservasbarultimate.aplicacion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -11,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.ceiba.reservasbarultimate.dominio.ReservaTestDataBuild;
 import com.ceiba.reservasbarultimate.reserva.aplicacion.comando.ComandoReserva;
@@ -23,8 +21,6 @@ class FabricaReservaTest {
 	
 	 @Autowired
 	 FabricaReserva  mockedfabricaReserva ;
-	 
-	 
 	 
 	 
 	 public FabricaReservaTest(){
