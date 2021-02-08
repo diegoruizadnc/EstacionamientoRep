@@ -1,22 +1,44 @@
 package com.ceiba.reservasbarultimate.dominio;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import com.ceiba.reservasbarultimate.reserva.dominio.modelo.dto.ReservaDto;
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
+import com.ceiba.reservasbarultimate.reserva.dominio.servicio.ServicioCrearReserva;
 
+
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
  class ReservaTest {
 	
-	public ReservaTest() {
-		
+   
+	
+	@Test
+	 void crearReservaDatosValidos() {
+		//arrange
+		  LocalDate localDate  = LocalDate.of(2021, 02, 13);
+		  Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		  Reserva reserva= new ReservaTestDataBuild().conFechaReserva(date).build();
+		  ReservaDto reservaDto= new ReservaDtoTestDataBuild().conFechaReserva(date).build();
+		  
+		  ServicioCrearReserva  mockedservicioCrearReserva = Mockito.mock(ServicioCrearReserva.class); 
+		  Mockito.when(mockedservicioCrearReserva.ejecutar(reserva)).thenReturn(reservaDto);
 	}
 	
-
 	
 	@Test
 	 void crearReservaNumeroMesaNulo() throws Exception{

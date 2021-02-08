@@ -31,17 +31,10 @@ private EntityManager entityManager;
 		entityManager.persist(reservaPersistente);
 		entityManager.flush();
 		
-		//apartarMesa(reserva.getIdMesa());
-		
 		return new ReservaDto(reservaPersistente.getIdReserva(),reservaPersistente.getIdMesa(),
 				reservaPersistente.getIdUsuario(), reservaPersistente.getFechaReserva(),
 				reservaPersistente.getCantidadPersonas(), reservaPersistente.getPrecioReserva());	
 	}
 	
-	/*public void apartarMesa(int id){
-		MesaPersistente mesaActualizarDisponibilidad= entityManager.find(MesaPersistente.class, id);
-		mesaActualizarDisponibilidad.setEstaDisponible(false);
-		entityManager.merge(mesaActualizarDisponibilidad);
-	}*/
 
 }

@@ -38,7 +38,7 @@ class FabricaReservaTest {
 			//arrange
 		 LocalDate localDate  = LocalDate.of(2021, 01, 29);
 		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		 ComandoReserva comandoReserva= new ComandoReservaTestBuild().conFechaReserva(fecha).build();
+		 ComandoReserva comandoReserva= new ComandoReservaTestBuild().build();
 		 Reserva reserva= new ReservaTestDataBuild().conFechaReserva(fecha).build();
 		 
 		 
