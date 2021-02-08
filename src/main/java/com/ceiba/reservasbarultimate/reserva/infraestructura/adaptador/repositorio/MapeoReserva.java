@@ -13,7 +13,7 @@ public  class MapeoReserva {
 		
 		ReservaPersistente reservaPersistente=new ReservaPersistente();
 		
-		reservaPersistente.setIdMesa(reserva.getIdMesa());;
+		reservaPersistente.setIdMesa(reserva.getIdMesa());
 		reservaPersistente.setIdUsuario(reserva.getIdUsuario());
 		reservaPersistente.setFechaReserva(reserva.getFechaReserva());;
 		reservaPersistente.setCantidadPersonas(reserva.getCantidadPersonas());

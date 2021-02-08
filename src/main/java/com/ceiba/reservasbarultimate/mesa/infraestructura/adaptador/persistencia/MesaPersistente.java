@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
-import lombok.Data;
 @Entity(name = "MESAS") 
 @NamedQuery(name="Mesas.byEstaDisponible" , query="SELECT mes FROM MESAS mes WHERE mes.estaDisponible = true")
 @NamedQuery(name="Mesas.byId", query="SELECT mes FROM MESAS mes WHERE " + " mes.idMesa = :idMesa")

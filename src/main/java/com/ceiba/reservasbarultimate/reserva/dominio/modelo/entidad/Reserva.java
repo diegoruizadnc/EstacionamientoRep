@@ -5,8 +5,6 @@ import java.time.ZoneId;
 import java.util.Date;
 
 
-import lombok.Data;
-
 public class Reserva {
 		
 	private static final String ID_MESA_MESA_VALIDO = "error, El numero de mesa debe ser un valor entre 1 y 9";

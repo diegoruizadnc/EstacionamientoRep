@@ -13,12 +13,11 @@ public class ConversorMesaAMesaPersistente {
 		
 		MesaPersistente mesaPersistente=new MesaPersistente();
 
-		mesaPersistente.setIdMesa(mesa.getIdMesa());;
+		mesaPersistente.setIdMesa(mesa.getIdMesa());
 		mesaPersistente.setFila(mesa.getFila());
 		mesaPersistente.setPrecioBase(mesa.getPrecioBase());
 		mesaPersistente.setEstaDisponible(mesa.getEstaDisponible());
 
-		
 		return mesaPersistente;
 	}
 	

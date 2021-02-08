@@ -3,7 +3,6 @@ package com.ceiba.reservasbarultimate.reserva.dominio.modelo.dto;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 @AllArgsConstructor
 public class ReservaDto {
