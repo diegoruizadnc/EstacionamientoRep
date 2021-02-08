@@ -2,7 +2,6 @@ package com.ceiba.reservasbarultimate.reserva.infraestructura.adaptador.reposito
 
 import org.springframework.stereotype.Repository;
 
-import com.ceiba.reservasbarultimate.mesa.infraestructura.adaptador.persistencia.MesaPersistente;
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.dto.ReservaDto;
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 import com.ceiba.reservasbarultimate.reserva.dominio.puerto.repositorio.ReservaRepositorio;

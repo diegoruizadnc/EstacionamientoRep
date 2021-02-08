@@ -3,7 +3,7 @@ package com.ceiba.reservasbarultimate.reserva.infraestructura.adaptador.reposito
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 import com.ceiba.reservasbarultimate.reserva.infraestructura.adaptador.persistencia.ReservaPersistente;
 
-public class MapeoReserva {
+public final class MapeoReserva {
 	
 	private MapeoReserva() {
 
@@ -12,8 +12,6 @@ public class MapeoReserva {
 	public static ReservaPersistente convertirReservaAPersistente(Reserva reserva){
 		
 		ReservaPersistente reservaPersistente=new ReservaPersistente();
-		
-		
 		
 		reservaPersistente.setIdMesa(reserva.getIdMesa());;
 		reservaPersistente.setIdUsuario(reserva.getIdUsuario());
