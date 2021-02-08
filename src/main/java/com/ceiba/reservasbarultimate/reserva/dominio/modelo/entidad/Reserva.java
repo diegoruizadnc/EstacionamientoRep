@@ -74,11 +74,11 @@ public class Reserva {
 	}
 
 	public Date getFechaReserva() {
-		return fechaReserva;
+		return (Date) fechaReserva.clone();
 	}
 
 	public void setFechaReserva(Date fechaReserva) {
-		this.fechaReserva = fechaReserva;
+		this.fechaReserva = (Date) fechaReserva.clone();
 	}
 	
 	

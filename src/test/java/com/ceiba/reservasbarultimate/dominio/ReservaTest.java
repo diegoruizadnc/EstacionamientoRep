@@ -33,6 +33,10 @@ import com.ceiba.reservasbarultimate.reserva.dominio.servicio.ServicioCrearReser
 		  
 		  ServicioCrearReserva  mockedservicioCrearReserva = Mockito.mock(ServicioCrearReserva.class); 
 		  Mockito.when(mockedservicioCrearReserva.ejecutar(reserva)).thenReturn(reservaDto);
+		  
+		  assertEquals(reserva.getIdMesa(), reservaDto.getIdMesa());
+		  assertEquals(reserva.getIdUsuario(), reservaDto.getIdUsuario());
+		  assertEquals(reserva.getCantidadPersonas(), reservaDto.getCantidadPersonas());
 	}
 	
 	
