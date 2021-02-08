@@ -41,10 +41,10 @@ public class ReservaPersistente  {
 		this.idUsuario = idUsuario;
 	}
 	public Date getFechaReserva() {
-		return fechaReserva;
+		return (Date) fechaReserva.clone();
 	}
 	public void setFechaReserva(Date fechaReserva) {
-		this.fechaReserva = fechaReserva;
+		this.fechaReserva = (Date) fechaReserva.clone();
 	}
 	public int getCantidadPersonas() {
 		return cantidadPersonas;
