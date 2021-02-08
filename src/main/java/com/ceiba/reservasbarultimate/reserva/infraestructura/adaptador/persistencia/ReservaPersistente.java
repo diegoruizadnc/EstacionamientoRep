@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import lombok.Data;
 
 @Entity(name = "RESERVAS")
-@Data
 public class ReservaPersistente  {
 	
 	@Id
@@ -22,5 +21,43 @@ public class ReservaPersistente  {
 	private Date fechaReserva;
 	private int cantidadPersonas;
 	private Long precioReserva;
+	
+	public Long getIdReserva() {
+		return idReserva;
+	}
+	public void setIdReserva(Long idReserva) {
+		this.idReserva = idReserva;
+	}
+	public int getIdMesa() {
+		return idMesa;
+	}
+	public void setIdMesa(int idMesa) {
+		this.idMesa = idMesa;
+	}
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+	public Date getFechaReserva() {
+		return fechaReserva;
+	}
+	public void setFechaReserva(Date fechaReserva) {
+		this.fechaReserva = fechaReserva;
+	}
+	public int getCantidadPersonas() {
+		return cantidadPersonas;
+	}
+	public void setCantidadPersonas(int cantidadPersonas) {
+		this.cantidadPersonas = cantidadPersonas;
+	}
+	public Long getPrecioReserva() {
+		return precioReserva;
+	}
+	public void setPrecioReserva(Long precioReserva) {
+		this.precioReserva = precioReserva;
+	}
+
 
 }
