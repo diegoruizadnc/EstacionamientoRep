@@ -2,8 +2,8 @@ package com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad;
 
 import java.util.Date;
 
+import com.ceiba.reservasbarultimate.comun.dominio.excepciones.CampoRequeridoExcepcion;
 import com.ceiba.reservasbarultimate.comun.dominio.excepciones.ValorNoValidoExcepcion;
-import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.excepciones.CampoRequeridoExcepcion;
 import com.ceiba.reservasbarultimate.util.Utiles;
 
 public class ValidadorCamposReserva {

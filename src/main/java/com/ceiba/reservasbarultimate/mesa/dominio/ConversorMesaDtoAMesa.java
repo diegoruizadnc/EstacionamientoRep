@@ -6,7 +6,7 @@ import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.entidad.Mesa;
 
 @Component
-public final class ConversorMesaDtoAMesa {
+public  class ConversorMesaDtoAMesa {
 	
 	private  ConversorMesaDtoAMesa() {
 

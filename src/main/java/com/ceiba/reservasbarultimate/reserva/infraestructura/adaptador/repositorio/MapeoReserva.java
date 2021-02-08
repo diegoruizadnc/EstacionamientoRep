@@ -3,7 +3,7 @@ package com.ceiba.reservasbarultimate.reserva.infraestructura.adaptador.reposito
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 import com.ceiba.reservasbarultimate.reserva.infraestructura.adaptador.persistencia.ReservaPersistente;
 
-public final class MapeoReserva {
+public  class MapeoReserva {
 	
 	private MapeoReserva() {
 

@@ -1,6 +1,5 @@
 package com.ceiba.reservasbarultimate.reserva.aplicacion.comando;
 
-import java.util.Date;
 
 import lombok.Getter;
 
