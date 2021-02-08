@@ -7,7 +7,6 @@ import java.util.Date;
 
 import lombok.Data;
 
-@Data
 public class Reserva {
 		
 	private static final String ID_MESA_MESA_VALIDO = "error, El numero de mesa debe ser un valor entre 1 y 9";
@@ -43,5 +42,47 @@ public class Reserva {
 		this.fechaReserva = FECHA_HOY;
 		this.cantidadPersonas = cantidadPersonas;
 	}
+
+	public Integer getIdMesa() {
+		return idMesa;
+	}
+
+	public void setIdMesa(Integer idMesa) {
+		this.idMesa = idMesa;
+	}
+
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	public Integer getCantidadPersonas() {
+		return cantidadPersonas;
+	}
+
+	public void setCantidadPersonas(Integer cantidadPersonas) {
+		this.cantidadPersonas = cantidadPersonas;
+	}
+
+	public Long getPrecioReserva() {
+		return precioReserva;
+	}
+
+	public void setPrecioReserva(Long precioReserva) {
+		this.precioReserva = precioReserva;
+	}
+
+	public Date getFechaReserva() {
+		return fechaReserva;
+	}
+
+	public void setFechaReserva(Date fechaReserva) {
+		this.fechaReserva = fechaReserva;
+	}
+	
+	
 
 }

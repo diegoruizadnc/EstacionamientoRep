@@ -5,7 +5,6 @@ import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
 @AllArgsConstructor
 public class ReservaDto {
     
@@ -15,5 +14,31 @@ public class ReservaDto {
 	private Date fechaReserva;
 	private int cantidadPersonas;
 	private Long precioReserva;
+	
+	public Long getIdReserva() {
+		return idReserva;
+	}
+
+	public int getIdMesa() {
+		return idMesa;
+	}
+
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+
+	public Date getFechaReserva() {
+		return (Date) fechaReserva.clone();
+	}
+	
+	public int getCantidadPersonas() {
+		return cantidadPersonas;
+	}
+	
+	public Long getPrecioReserva() {
+		return precioReserva;
+	}
+
+	
 
 }
