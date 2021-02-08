@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 
-public final  class Utiles {
+public  class Utiles {
 
 	private Utiles() {
 
