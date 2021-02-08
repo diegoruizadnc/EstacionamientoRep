@@ -1,41 +1,47 @@
 package com.ceiba.reservasbarultimate.mesa.infraestructura;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-
-
-@RunWith(SpringRunner.class)
-@AutoConfigureMockMvc
-@SpringBootTest
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class MesaIntegracionTest {
 	
-	  @Autowired
-	    private MockMvc mvc;
+	@Autowired
+    private ObjectMapper objectMapper;
 
-	    @Autowired
-	    private ObjectMapper objectMapper;
+    @Autowired
+    private WebApplicationContext wac;
+
+    private MockMvc mockMvc;
+
+    @BeforeAll
+    public void setup() {
+        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+    }
 	    
 	    @Test
 	    public void listarMesasDisponiblesTest() throws Exception {
-	        mvc.perform(MockMvcRequestBuilders
+	    	mockMvc.perform(MockMvcRequestBuilders
 	            .get("/mesas")
-	            .accept(MediaType.APPLICATION_JSON))
-	                .andDo(print())
-	                .andExpect(status().isOk());
+	            .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isOk());
 	    }
 
 }
