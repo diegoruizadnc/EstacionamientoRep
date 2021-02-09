@@ -13,7 +13,7 @@ public class Reserva {
 	private static final String FECHA_RESERVA_INCORRECTA = "error, Solo puede hacer las reservas de miercoles a sabado ";
 	private static final Long LONGITUD_MINIMA_DOCUMENTO = 6l;
 	private static final Long LONGITUD_MAXIMA_DOCUMENTO = 12l;
-	LocalDate localDate  = LocalDate.of(2021, 2, 10);
+	LocalDate localDate  = LocalDate.of(2021, 2, 12);
 	Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 	private  final Date FECHA_HOY = date;
 
@@ -23,6 +23,12 @@ public class Reserva {
 	private Date fechaReserva;
 	private Integer cantidadPersonas;
 	private Long precioReserva;
+	
+	
+
+	public Reserva() {
+		
+	}
 
 	public Reserva( Integer idMesa, Long idUsuario, Integer cantidadPersonas) {
 		

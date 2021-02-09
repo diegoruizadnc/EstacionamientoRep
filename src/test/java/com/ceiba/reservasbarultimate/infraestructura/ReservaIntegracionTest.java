@@ -16,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -31,7 +32,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
  class ReservaIntegracionTest {
 	
-	  @Autowired
+	    @Autowired
 	    private ObjectMapper objectMapper;
 
 	    @Autowired
@@ -46,20 +47,91 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 		
 		
 	    @Test
-	    void crearReservaIntegracionTest() throws Exception {
+	    void crearReservaConDatosCorrectosTest() throws Exception {
 	    
-	        
-	        LocalDate localDate  = LocalDate.of(2021, 02, 13);
-			Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 			ComandoReserva comandoReserva= new ComandoReservaTestBuild().build();
-			ReservaDto reservaDto= new ReservaDtoTestDataBuild().conFechaReserva(date).build();
 
 	        mockMvc.perform( MockMvcRequestBuilders
 	                .post("/reserva")
 	                .content(objectMapper.writeValueAsString(comandoReserva))
 	                .contentType(MediaType.APPLICATION_JSON)
 	                .accept(MediaType.APPLICATION_JSON))
+	                .andExpect(status().isOk())
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.idMesa").value(1))
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.cantidadPersonas").value(4))
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.idUsuario").value(34567899l))
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.precioReserva").value(190000l));
+	        
+	    }
+	    
+	    
+	    @Test
+	    void crearReservaConIdMesaErroneoTest() throws Exception {
+	    
+	        
+			ComandoReserva comandoReserva= new ComandoReservaTestBuild().conIdMesa(14).build();
+
+	        mockMvc.perform( MockMvcRequestBuilders
+	                .post("/reserva")
+	                .content(objectMapper.writeValueAsString(comandoReserva))
+	                .contentType(MediaType.APPLICATION_JSON)
+	                .accept(MediaType.APPLICATION_JSON))
+	                .andExpect(status().is4xxClientError())
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.mensaje").value("error, El numero de mesa debe ser un valor entre 1 y 9"));
+	    }
+	    
+	    @Test
+	    void crearReservaConIdUsuarioErroneoTest() throws Exception {
+	    
+			ComandoReserva comandoReserva= new ComandoReservaTestBuild().conIdUsuario(1234l).build();
+
+	        mockMvc.perform( MockMvcRequestBuilders
+	                .post("/reserva")
+	                .content(objectMapper.writeValueAsString(comandoReserva))
+	                .contentType(MediaType.APPLICATION_JSON)
+	                .accept(MediaType.APPLICATION_JSON))
+	                .andExpect(status().is4xxClientError());
+	    }
+	    
+	    @Test
+	    void crearReservaConCantidadPersonasErroneoTest() throws Exception {
+	    
+			ComandoReserva comandoReserva= new ComandoReservaTestBuild().conCantidadPersonas(6).build();
+
+	        mockMvc.perform( MockMvcRequestBuilders
+	                .post("/reserva")
+	                .content(objectMapper.writeValueAsString(comandoReserva))
+	                .contentType(MediaType.APPLICATION_JSON)
+	                .accept(MediaType.APPLICATION_JSON))
+	                .andExpect(status().is4xxClientError());
+	    }
+	    
+	    
+	    @Test
+	    void intentarCrearReservaMesaNoDisponibleTest() throws Exception {
+	    
+			ComandoReserva reservaMesa1Cliente1= new ComandoReservaTestBuild().conIdUsuario(1122334455l).conIdMesa(2).build();
+
+	        mockMvc.perform( MockMvcRequestBuilders
+	                .post("/reserva")
+	                .content(objectMapper.writeValueAsString(reservaMesa1Cliente1))
+	                .contentType(MediaType.APPLICATION_JSON)
+	                .accept(MediaType.APPLICATION_JSON))
 	                .andExpect(status().isOk());
+	        
+	        
+	        ComandoReserva reservaMesa1Cliente2= new ComandoReservaTestBuild().conIdUsuario(77788899l).conIdMesa(2).build();
+
+	        mockMvc.perform( MockMvcRequestBuilders
+	                .post("/reserva")
+	                .content(objectMapper.writeValueAsString(reservaMesa1Cliente2))
+	                .contentType(MediaType.APPLICATION_JSON)
+	                .accept(MediaType.APPLICATION_JSON))
+	                .andExpect(status().is4xxClientError())
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.mensaje").value("Lo sentimos, La mesa que intentas reservar NO esta disponible"));
+	        
+	        
+	        
 	    }
 
 }

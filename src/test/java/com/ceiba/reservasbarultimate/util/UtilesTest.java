@@ -2,6 +2,8 @@ package com.ceiba.reservasbarultimate.util;
 
 import org.junit.jupiter.api.Test;
 
+import com.ceiba.reservasbarultimate.comun.util.Utiles;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
@@ -15,262 +17,6 @@ class UtilesTest {
 		 
 	 }
 	 
-	 // Mesa 1
-	 
-	 @Test
-	 void CalcularValorReservaMesa1DiaSabado() {
-		//arrange
-		 Integer numerMesa = 1;
-		 LocalDate localDate  = LocalDate.of(2021, 02, 13); // sabado
-		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		//act
-		 Utiles  mockedUtiles = mock(Utiles.class);
-		 @SuppressWarnings("static-access")
-		Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-		 //assert
-		 assertEquals(200000l,resultado);
-		 
-	 }
-	 
-	 
-	 @Test
-	 void CalcularValorReservaMesa1DiaViernes() {
-		//arrange
-		 Integer numerMesa = 1;
-		 LocalDate localDate  = LocalDate.of(2021, 02, 12); // viernes
-		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		//act
-		 Utiles  mockedUtiles = mock(Utiles.class);
-		 @SuppressWarnings("static-access")
-		Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-		 //assert
-		 assertEquals(190000l,resultado);
-		 
-	 }
-	 
-	 @Test
-	 void CalcularValorReservaMesa1DiaJueves() {
-		//arrange
-		 Integer numerMesa = 1;
-		 LocalDate localDate  = LocalDate.of(2021, 02, 11); // jueves
-		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		//act
-		 Utiles  mockedUtiles = mock(Utiles.class);
-		 @SuppressWarnings("static-access")
-		Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-		 //assert
-		 assertEquals(180000l,resultado);
-		 
-	 }
-	 
-	 @Test
-	 void CalcularValorReservaMesa1DiaMiercoles() {
-		//arrange
-		 Integer numerMesa = 1;
-		 LocalDate localDate  = LocalDate.of(2021, 02, 10); // miercoles
-		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		//act
-		 Utiles  mockedUtiles = mock(Utiles.class);
-		 @SuppressWarnings("static-access")
-		Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-		 //assert
-		 assertEquals(170000l,resultado);
-		 
-	 }
-	 
-	 
-	 
-	 // Mesa2
-	 
-	 @Test
-	 void CalcularValorReservaMesa2DiaSabado() {
-		//arrange
-		 Integer numerMesa = 2;
-		 LocalDate localDate  = LocalDate.of(2021, 02, 13); // sabado
-		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		//act
-		 Utiles  mockedUtiles = mock(Utiles.class);
-		 @SuppressWarnings("static-access")
-		Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-		 //assert
-		 assertEquals(200000l,resultado);
-		 
-	 }
-	 
-	 
-	 @Test
-	 void CalcularValorReservaMesa2DiaViernes() {
-		//arrange
-		 Integer numerMesa = 2;
-		 LocalDate localDate  = LocalDate.of(2021, 02, 12); // viernes
-		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		//act
-		 Utiles  mockedUtiles = mock(Utiles.class);
-		 @SuppressWarnings("static-access")
-		Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-		 //assert
-		 assertEquals(190000l,resultado);
-		 
-	 }
-	 
-	 @Test
-	 void CalcularValorReservaMesa2DiaJueves() {
-		//arrange
-		 Integer numerMesa = 2;
-		 LocalDate localDate  = LocalDate.of(2021, 02, 11); // jueves
-		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		//act
-		 Utiles  mockedUtiles = mock(Utiles.class);
-		 @SuppressWarnings("static-access")
-		Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-		 //assert
-		 assertEquals(180000l,resultado);
-		 
-	 }
-	 
-	 @Test
-	 void CalcularValorReservaMesa2DiaMiercoles() {
-		//arrange
-		 Integer numerMesa = 2;
-		 LocalDate localDate  = LocalDate.of(2021, 02, 10); // miercoles
-		 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		//act
-		 Utiles  mockedUtiles = mock(Utiles.class);
-		 @SuppressWarnings("static-access")
-		Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-		 //assert
-		 assertEquals(170000l,resultado);
-		 
-	 }
-	 
-	 
-	 
-	// Mesa4
-	 
-		 @Test
-		 void CalcularValorReservaMesa4DiaSabado() {
-			//arrange
-			 Integer numerMesa = 4;
-			 LocalDate localDate  = LocalDate.of(2021, 02, 13); // sabado
-			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-			//act
-			 Utiles  mockedUtiles = mock(Utiles.class);
-			 @SuppressWarnings("static-access")
-			Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-			 //assert
-			 assertEquals(150000l,resultado);
-			 
-		 }
-		 
-		 
-		 @Test
-		 void CalcularValorReservaMesa4DiaViernes() {
-			//arrange
-			 Integer numerMesa = 4;
-			 LocalDate localDate  = LocalDate.of(2021, 02, 12); // viernes
-			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-			//act
-			 Utiles  mockedUtiles = mock(Utiles.class);
-			 @SuppressWarnings("static-access")
-			Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-			 //assert
-			 assertEquals(142500l,resultado);
-			 
-		 }
-		 
-		 @Test
-		 void CalcularValorReservaMesa4DiaJueves() {
-			//arrange
-			 Integer numerMesa = 4;
-			 LocalDate localDate  = LocalDate.of(2021, 02, 11); // jueves
-			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-			//act
-			 Utiles  mockedUtiles = mock(Utiles.class);
-			 @SuppressWarnings("static-access")
-			Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-			 //assert
-			 assertEquals(135000l,resultado);
-			 
-		 }
-		 
-		 @Test
-		 void CalcularValorReservaMesa4DiaMiercoles() {
-			//arrange
-			 Integer numerMesa = 4;
-			 LocalDate localDate  = LocalDate.of(2021, 02, 10); // miercoles
-			 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-			//act
-			 Utiles  mockedUtiles = mock(Utiles.class);
-			 @SuppressWarnings("static-access")
-			Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-			 //assert
-			 assertEquals(127500l,resultado);
-			 
-		 }
-		 
-		// Mesa 8
-		 
-			 @Test
-			 void CalcularValorReservaMesa8DiaSabado() {
-				//arrange
-				 Integer numerMesa = 8;
-				 LocalDate localDate  = LocalDate.of(2021, 02, 13); // sabado
-				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-				//act
-				 Utiles  mockedUtiles = mock(Utiles.class);
-				 @SuppressWarnings("static-access")
-				Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-				 //assert
-				 assertEquals(100000l,resultado);
-				 
-			 }
-			 
-			 
-			 @Test
-			 void CalcularValorReservaMesa8DiaViernes() {
-				//arrange
-				 Integer numerMesa = 8;
-				 LocalDate localDate  = LocalDate.of(2021, 02, 12); // viernes
-				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-				//act
-				 Utiles  mockedUtiles = mock(Utiles.class);
-				 @SuppressWarnings("static-access")
-				Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-				 //assert
-				 assertEquals(95000l,resultado);
-				 
-			 }
-			 
-			 @Test
-			 void CalcularValorReservaMesa8DiaJueves() {
-				//arrange
-				 Integer numerMesa = 8;
-				 LocalDate localDate  = LocalDate.of(2021, 02, 11); // jueves
-				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-				//act
-				 Utiles  mockedUtiles = mock(Utiles.class);
-				 @SuppressWarnings("static-access")
-				Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-				 //assert
-				 assertEquals(90000l,resultado);
-				 
-			 }
-			 
-			 @Test
-			 void CalcularValorReservaMesa8DiaMiercoles() {
-				//arrange
-				 Integer numerMesa = 8;
-				 LocalDate localDate  = LocalDate.of(2021, 02, 10); // miercoles
-				 Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-				//act
-				 Utiles  mockedUtiles = mock(Utiles.class);
-				 @SuppressWarnings("static-access")
-				Long resultado = mockedUtiles.calcularValorReserva(fecha,numerMesa);
-				 //assert
-				 assertEquals(85000l,resultado);
-				 
-			 }
-	 
 	 
 	 @Test
 	 void DiaDeLaSEmanaCorrecto() {
@@ -279,7 +25,8 @@ class UtilesTest {
 		    Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
-		 int resultado = mockedUtiles.obtenerDiaSemana(fecha);
+		 @SuppressWarnings("static-access")
+		int resultado = mockedUtiles.obtenerDiaSemana(fecha);
 		 //assert
 		 assertEquals(1,resultado);
 		 
@@ -292,7 +39,8 @@ class UtilesTest {
 		    Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		//act
 		 Utiles  mockedUtiles = mock(Utiles.class);
-		 int resultado = mockedUtiles.obtenerDiaSemana(fecha);
+		 @SuppressWarnings("static-access")
+		int resultado = mockedUtiles.obtenerDiaSemana(fecha);
 		 //assert
 		 assertEquals(5,resultado);
 		 

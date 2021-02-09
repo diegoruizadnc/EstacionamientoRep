@@ -1,48 +1,38 @@
 package com.ceiba.reservasbarultimate.mesa.dominio;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
-
+import com.ceiba.reservasbarultimate.mesa.dominio.modelo.entidad.Mesa;
+import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 
 public class MesaTestDataBuilder {
-	
-	private List<MesaDto> listaMesas;
 
+	private Integer idMesa;
+	private String fila;
+	private Long precioBase;
+	private Boolean estaDisponible;
 
 	public MesaTestDataBuilder() {
-		listaMesas = listaMesasDisponbles();
+
+		idMesa = 1;
+		fila = "1";
+		precioBase = 200000l;
+		estaDisponible = true;
+
 	}
 	
-	public  List<MesaDto> listaMesasDisponbles(){
-		List<MesaDto> lisaMesas = new ArrayList<>();
-		MesaDto mesa1=new MesaDto(1, "1", 200000l, true);
-		MesaDto mesa2=new MesaDto(2, "1", 200000l, true);
-		
-		MesaDto mesa3=new MesaDto(3, "2", 150000l, true);
-		MesaDto mesa4=new MesaDto(4, "2", 150000l, true);
-		MesaDto mesa5=new MesaDto(5, "2", 150000l, true);
-		
-		MesaDto mesa6=new MesaDto(6, "3", 100000l, true);
-		MesaDto mesa7=new MesaDto(7, "3", 100000l, true);
-		MesaDto mesa8=new MesaDto(8, "3", 100000l, true);
-		MesaDto mesa9=new MesaDto(9, "3", 100000l, true);
-		lisaMesas.add(mesa1);
-		lisaMesas.add(mesa2);
-		lisaMesas.add(mesa3);
-		lisaMesas.add(mesa4);
-		lisaMesas.add(mesa5);
-		lisaMesas.add(mesa6);
-		lisaMesas.add(mesa7);
-		lisaMesas.add(mesa8);
-		lisaMesas.add(mesa9);
-		
-		return lisaMesas;
+	public MesaTestDataBuilder conIdMesa(Integer idMesa) {
+		this.idMesa = idMesa;
+		return this;
 	}
 	
-	public List<MesaDto> getListaMesas() {
-		return listaMesas;
+	
+	public MesaTestDataBuilder conEstaDisponible(Boolean estaDisponible) {
+		this.estaDisponible = estaDisponible;
+		return this;
 	}
+	
+	
+	 public Mesa build() {
+	        return new Mesa(idMesa,fila,precioBase,estaDisponible);
+	    }
 
 }

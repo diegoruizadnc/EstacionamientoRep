@@ -32,9 +32,9 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 	void ejecutarManejadorCrearReservaTest() {
 
 		// arrange
-		/*LocalDate localDate = LocalDate.of(2021, 01, 29);
+		LocalDate localDate = LocalDate.of(2021, 01, 29);
 		Date fecha = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		ComandoReserva comandoReserva = new ComandoReservaTestBuild().conFechaReserva(fecha).build();
+		ComandoReserva comandoReserva = new ComandoReservaTestBuild().build();
 		@SuppressWarnings("unused")
 		Reserva reserva = new ReservaTestDataBuild().conFechaReserva(fecha).build();
 		ReservaDto reservaDto = new ReservaDtoTestDataBuild().conFechaReserva(fecha).build();
@@ -43,8 +43,8 @@ import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 		ReservaDto resultadoReservaDto = manejadorCrearReserva.ejecutar(comandoReserva);
 
 		// assert
-		assertEquals(reservaDto.getFechaReserva(), resultadoReservaDto.getFechaReserva());*/
-		assertEquals(2,2);
+		assertEquals(reservaDto.getIdMesa(), resultadoReservaDto.getIdMesa());
+		//assertEquals(2,2);
 
 	}
 

@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
-import com.ceiba.reservasbarultimate.util.Utiles;
+import com.ceiba.reservasbarultimate.comun.util.Utiles;
 
 import lombok.NoArgsConstructor;
 @Component

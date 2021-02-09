@@ -38,7 +38,7 @@ class FabricaReservaTest {
 		 Reserva reserva= new ReservaTestDataBuild().conFechaReserva(fecha).build();
 		 
 		 
-		 //////ejemplo alexander ///////
+		 //////ejemplo  ///////
 		 
 		 FabricaReserva  mockedfabricaReserva2 = Mockito.mock(FabricaReserva.class); 
 		 Mockito.when(mockedfabricaReserva2.crearReserva(comandoReserva)).thenReturn(reserva);

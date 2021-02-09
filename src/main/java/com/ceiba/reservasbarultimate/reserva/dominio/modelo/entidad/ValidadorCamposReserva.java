@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.ceiba.reservasbarultimate.comun.dominio.excepciones.CampoRequeridoExcepcion;
 import com.ceiba.reservasbarultimate.comun.dominio.excepciones.ValorNoValidoExcepcion;
-import com.ceiba.reservasbarultimate.util.Utiles;
+import com.ceiba.reservasbarultimate.comun.util.Utiles;
 
 public final class ValidadorCamposReserva {
 
