@@ -40,9 +40,9 @@ public class ServicioCrearReserva {
 
 		servicioCambiarDisponibilidadMesa.ejecutar(mesaDto);
 
-		Long precioBaseMesa = servicioCalcularValorMesaHoy.ejecutar(mesaDto.getPrecioBase(), reserva.getFechaReserva());
+		Long precioMesaHoy = servicioCalcularValorMesaHoy.ejecutar(mesaDto.getPrecioBase(), reserva.getFechaReserva());
 
-		reserva.setPrecioReserva(precioBaseMesa);
+		reserva.setPrecioReserva(precioMesaHoy);
 
 		return reservaRepositorio.crear(reserva);
 

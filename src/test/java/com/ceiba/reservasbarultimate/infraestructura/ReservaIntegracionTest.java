@@ -45,24 +45,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 	        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 	    }
 		
-		
-	  /*  @Test
-	    void crearReservaConDatosCorrectosTest() throws Exception {
-	    
-			ComandoReserva comandoReserva= new ComandoReservaTestBuild().build();
-
-	        mockMvc.perform( MockMvcRequestBuilders
-	                .post("/reserva")
-	                .content(objectMapper.writeValueAsString(comandoReserva))
-	                .contentType(MediaType.APPLICATION_JSON)
-	                .accept(MediaType.APPLICATION_JSON))
-	                .andExpect(status().isOk())
-	                .andExpect(MockMvcResultMatchers.jsonPath("$.idMesa").value(1))
-	                .andExpect(MockMvcResultMatchers.jsonPath("$.cantidadPersonas").value(4))
-	                .andExpect(MockMvcResultMatchers.jsonPath("$.idUsuario").value(34567899l))
-	                .andExpect(MockMvcResultMatchers.jsonPath("$.precioReserva").value(190000l));
-	        
-	    }*/
 	    
 	    
 	    @Test
@@ -131,6 +113,24 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 	                .andExpect(MockMvcResultMatchers.jsonPath("$.mensaje").value("Lo sentimos, La mesa que intentas reservar NO esta disponible"));
 	        
 	        
+	        
+	    }
+	    
+	     @Test
+	    void crearReservaConDatosCorrectosTest() throws Exception {
+	    
+			ComandoReserva comandoReserva= new ComandoReservaTestBuild().build();
+
+	        mockMvc.perform( MockMvcRequestBuilders
+	                .post("/reserva")
+	                .content(objectMapper.writeValueAsString(comandoReserva))
+	                .contentType(MediaType.APPLICATION_JSON)
+	                .accept(MediaType.APPLICATION_JSON))
+	                .andExpect(status().isOk())
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.idMesa").value(1))
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.cantidadPersonas").value(4))
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.idUsuario").value(34567899l))
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.precioReserva").value(190000l));
 	        
 	    }
 
