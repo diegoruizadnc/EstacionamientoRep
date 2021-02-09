@@ -56,11 +56,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 	                .content(objectMapper.writeValueAsString(comandoReserva))
 	                .contentType(MediaType.APPLICATION_JSON)
 	                .accept(MediaType.APPLICATION_JSON))
-	                .andExpect(status().isOk());
-	               /* .andExpect(MockMvcResultMatchers.jsonPath("$.idMesa").value(1))
-	                .andExpect(MockMvcResultMatchers.jsonPath("$.cantidadPersonas").value(4))
-	                .andExpect(MockMvcResultMatchers.jsonPath("$.idUsuario").value(34567899l))
-	                .andExpect(MockMvcResultMatchers.jsonPath("$.precioReserva").value(190000l));*/
+	                //.andExpect(status().isOk());
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.idMesa").value(1));
+	                //.andExpect(MockMvcResultMatchers.jsonPath("$.cantidadPersonas").value(4))
+	               // .andExpect(MockMvcResultMatchers.jsonPath("$.idUsuario").value(34567899l))
+	               // .andExpect(MockMvcResultMatchers.jsonPath("$.precioReserva").value(190000l));
 	        
 	    }
 	    
