@@ -4,7 +4,8 @@ import java.util.Date;
 
 import com.ceiba.reservasbarultimate.comun.dominio.excepciones.CampoRequeridoExcepcion;
 import com.ceiba.reservasbarultimate.comun.dominio.excepciones.ValorNoValidoExcepcion;
-import com.ceiba.reservasbarultimate.comun.util.Utiles;
+import com.ceiba.reservasbarultimate.comun.util.UtilesManejoCadenas;
+import com.ceiba.reservasbarultimate.comun.util.UtilesManejoFechas;
 
 public final class ValidadorCamposReserva {
 
@@ -37,8 +38,8 @@ public final class ValidadorCamposReserva {
 			throw new CampoRequeridoExcepcion(errorMessage);
 		}
 
-		Boolean longitudMaximaDocumentoValida = Utiles.validaMaxCaracteres(idUsuario.toString(), longitudMaximaDoc);
-		Boolean longitudMinimaDocumentoValida = Utiles.validaMinimaCaracteres(idUsuario.toString(), longitudMinimaDoc);
+		Boolean longitudMaximaDocumentoValida = UtilesManejoCadenas.validaMaxCaracteres(idUsuario.toString(), longitudMaximaDoc);
+		Boolean longitudMinimaDocumentoValida = UtilesManejoCadenas.validaMinimaCaracteres(idUsuario.toString(), longitudMinimaDoc);
 
 		if (!longitudMaximaDocumentoValida || !longitudMinimaDocumentoValida) {
 			throw new ValorNoValidoExcepcion(errorMessage);
@@ -47,7 +48,7 @@ public final class ValidadorCamposReserva {
 
 	public static void validarDiaReservaValido(Date fechaHoy, String errorMessage) {
 
-		int dia = Utiles.obtenerDiaSemana(fechaHoy);
+		int dia = UtilesManejoFechas.obtenerDiaSemana(fechaHoy);
 
 		if (dia < 3 || dia == 7) {
 			throw new ValorNoValidoExcepcion(errorMessage);

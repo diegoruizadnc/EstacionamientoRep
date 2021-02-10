@@ -1,16 +1,13 @@
-package com.ceiba.reservasbarultimate.dominio;
-
+package com.ceiba.reservasbarultimate.reserva.builders;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import com.ceiba.reservasbarultimate.reserva.dominio.modelo.dto.ReservaDto;
 
-import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
-
-
-
-public class ReservaTestDataBuild {
-
+public class ReservaDtoTestDataBuilder {
+	
+	private Long idReserva;
 	private Integer idMesa;
 	private Long idUsuario;
 	private Date fechaReserva;
@@ -19,9 +16,9 @@ public class ReservaTestDataBuild {
 	
 	
 
-	public ReservaTestDataBuild() {
+	public ReservaDtoTestDataBuilder() {
 		
-		 
+		idReserva = 1l;
 		idMesa = 1;
 		idUsuario = 34567899l;
 		fechaReserva = new Date();
@@ -34,37 +31,38 @@ public class ReservaTestDataBuild {
 	
 	
 	public void ponerFechaValida(){
-	    LocalDate localDate  = LocalDate.of(2021, 02, 12);
+	    LocalDate localDate  = LocalDate.of(2021, 01, 28);
 	    Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		this.fechaReserva = date;
 	}
 
-	public ReservaTestDataBuild conIdMesa(Integer idMesa) {
+	public ReservaDtoTestDataBuilder conIdMesa(Integer idMesa) {
 		this.idMesa = idMesa;
 		return this;
 	}
 
-	public ReservaTestDataBuild conIdUsuario(Long idUsuario) {
+	public ReservaDtoTestDataBuilder conIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 		return this;
 	}
 	
-	public ReservaTestDataBuild conFechaReserva(Date fechaReserva) {
+	public ReservaDtoTestDataBuilder conFechaReserva(Date fechaReserva) {
 		this.fechaReserva = fechaReserva;
 		return this;
 	}
 	
-	public ReservaTestDataBuild conCantidadPersonas(Integer cantidadPersonas) {
+	public ReservaDtoTestDataBuilder conCantidadPersonas(Integer cantidadPersonas) {
 		this.cantidadPersonas = cantidadPersonas;
 		return this;
 	}
 	
-	public ReservaTestDataBuild conPrecioReserva(Long precioReserva) {
+	public ReservaDtoTestDataBuilder conPrecioReserva(Long precioReserva) {
 		this.precioReserva = precioReserva;
 		return this;
 	}
 	
-	 public Reserva build() {
-	        return new Reserva(idMesa,idUsuario,cantidadPersonas);
+	 public ReservaDto build() {
+	        return new ReservaDto(idReserva,idMesa,idUsuario, fechaReserva,cantidadPersonas,precioReserva);
 	    }
+
 }

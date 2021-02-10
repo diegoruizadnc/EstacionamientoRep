@@ -1,16 +1,14 @@
-package com.ceiba.reservasbarultimate.dominio;
-
+package com.ceiba.reservasbarultimate.reserva.builders;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
+import com.ceiba.reservasbarultimate.dominio.ReservaTestDataBuild;
 import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 
-
-
-public class ReservaTestDataBuild {
-
+public class ReservaTestDataBuilder {
+	
 	private Integer idMesa;
 	private Long idUsuario;
 	private Date fechaReserva;
@@ -19,7 +17,7 @@ public class ReservaTestDataBuild {
 	
 	
 
-	public ReservaTestDataBuild() {
+	public ReservaTestDataBuilder() {
 		
 		 
 		idMesa = 1;
@@ -39,27 +37,27 @@ public class ReservaTestDataBuild {
 		this.fechaReserva = date;
 	}
 
-	public ReservaTestDataBuild conIdMesa(Integer idMesa) {
+	public ReservaTestDataBuilder conIdMesa(Integer idMesa) {
 		this.idMesa = idMesa;
 		return this;
 	}
 
-	public ReservaTestDataBuild conIdUsuario(Long idUsuario) {
+	public ReservaTestDataBuilder conIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 		return this;
 	}
 	
-	public ReservaTestDataBuild conFechaReserva(Date fechaReserva) {
+	public ReservaTestDataBuilder conFechaReserva(Date fechaReserva) {
 		this.fechaReserva = fechaReserva;
 		return this;
 	}
 	
-	public ReservaTestDataBuild conCantidadPersonas(Integer cantidadPersonas) {
+	public ReservaTestDataBuilder conCantidadPersonas(Integer cantidadPersonas) {
 		this.cantidadPersonas = cantidadPersonas;
 		return this;
 	}
 	
-	public ReservaTestDataBuild conPrecioReserva(Long precioReserva) {
+	public ReservaTestDataBuilder conPrecioReserva(Long precioReserva) {
 		this.precioReserva = precioReserva;
 		return this;
 	}
@@ -67,4 +65,5 @@ public class ReservaTestDataBuild {
 	 public Reserva build() {
 	        return new Reserva(idMesa,idUsuario,cantidadPersonas);
 	    }
+
 }

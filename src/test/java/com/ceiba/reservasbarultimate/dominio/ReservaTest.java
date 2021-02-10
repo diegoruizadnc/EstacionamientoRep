@@ -34,11 +34,9 @@ class ReservaTest {
 
 	}
 	
-
-	
 	
 	@Test
-     void validarCreacionReservaCorrecto() {
+     void validarCreacionReservaCorrecto() { // aprobada david
 		//arrange
 		LocalDate localDate = LocalDate.of(2021, 02, 12);
 		Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -65,6 +63,36 @@ class ReservaTest {
         
         assertEquals(nuevaReservaDto, reservaDto);
     }
+	
+	
+	
+	@Test
+    void validarCreacionReservaCorrectov22222() {
+		//arrange
+		LocalDate localDate = LocalDate.of(2021, 02, 12);
+		Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		
+		Reserva reserva = new  ReservaTestDataBuild().conIdMesa(1).conIdUsuario(12345678l).conCantidadPersonas(5).conFechaReserva(date).build();   
+		ReservaDto reservaDto = new ReservaDtoTestDataBuild().conIdMesa(1).conIdUsuario(12345678l).conCantidadPersonas(5).conFechaReserva(date).build();   
+		MesaDto  mesaDto = new MesaDto(1,"fila 1",200000l,true);
+		//Long precioMesaHoy = 190000l;
+		
+		ReservaRepositorio reservaRepositorio = Mockito.mock(ReservaRepositorio.class);
+		ServicioCambiarDisponibilidadMesa servicioCambiarDisponibilidadMesa = Mockito.mock(ServicioCambiarDisponibilidadMesa.class);
+		ServicioCalcularValorMesaHoy servicioCalcularValorMesaHoy = Mockito.mock(ServicioCalcularValorMesaHoy.class);
+		MesaDao mesaDao = Mockito.mock(MesaDao.class);
+		
+		
+       Mockito.when(mesaDao.buscarMesaPorId(reserva.getIdMesa())).thenReturn(mesaDto);
+       Mockito.when(reservaRepositorio.crear(reserva)).thenReturn(reservaDto); 
+       
+       ServicioCrearReserva servicioCrearReserva = new ServicioCrearReserva(reservaRepositorio,servicioCambiarDisponibilidadMesa,servicioCalcularValorMesaHoy,mesaDao);
+       
+       
+       ReservaDto nuevaReservaDto = servicioCrearReserva.ejecutar(reserva);
+       
+       assertEquals(nuevaReservaDto, reservaDto);
+   }
    
 	// Como estaba antes
 	@Test
