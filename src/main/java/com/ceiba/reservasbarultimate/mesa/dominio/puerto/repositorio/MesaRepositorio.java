@@ -4,6 +4,6 @@ import com.ceiba.reservasbarultimate.mesa.dominio.modelo.entidad.Mesa;
 
 public interface MesaRepositorio {
 	
-	void actualizar(Mesa mesa);
+	Boolean actualizar(Mesa mesa);
 
 }

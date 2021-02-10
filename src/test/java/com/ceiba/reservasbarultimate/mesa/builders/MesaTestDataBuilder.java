@@ -1,10 +1,10 @@
-package com.ceiba.reservasbarultimate.mesa.dominio;
+package com.ceiba.reservasbarultimate.mesa.builders;
+
 
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.entidad.Mesa;
-import com.ceiba.reservasbarultimate.reserva.dominio.modelo.entidad.Reserva;
 
 public class MesaTestDataBuilder {
-
+	
 	private Integer idMesa;
 	private String fila;
 	private Long precioBase;
@@ -21,6 +21,16 @@ public class MesaTestDataBuilder {
 	
 	public MesaTestDataBuilder conIdMesa(Integer idMesa) {
 		this.idMesa = idMesa;
+		return this;
+	}
+	
+	public MesaTestDataBuilder conFila(String fila) {
+		this.fila = fila;
+		return this;
+	}
+	
+	public MesaTestDataBuilder conPrecioBase(Long precioBase) {
+		this.precioBase = precioBase;
 		return this;
 	}
 	

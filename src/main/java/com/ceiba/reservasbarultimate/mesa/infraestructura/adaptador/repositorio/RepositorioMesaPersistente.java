@@ -18,9 +18,11 @@ private EntityManager entityManager;
 	}
 
 	@Override
-	public void actualizar(Mesa mesa) {
+	public Boolean actualizar(Mesa mesa) {
 		MesaPersistente mesaPersistente = ConversorMesaAMesaPersistente.ejecutar(mesa);
 		entityManager.merge(mesaPersistente);
+		
+		return true;
 		
 	}
 

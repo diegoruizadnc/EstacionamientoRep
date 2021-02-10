@@ -16,8 +16,8 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.ceiba.reservasbarultimate.aplicacion.ComandoReservaTestBuild;
 import com.ceiba.reservasbarultimate.reserva.aplicacion.comando.ComandoReserva;
+import com.ceiba.reservasbarultimate.reserva.builders.ComandoReservaTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @ExtendWith(SpringExtension.class)
@@ -37,14 +37,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 	    public void setup() {
 	        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 	    }
-		
-	    
+		  
 	    
 	    @Test
 	    void crearReservaConIdMesaErroneoTest() throws Exception {
 	    
 	        
-			ComandoReserva comandoReserva= new ComandoReservaTestBuild().conIdMesa(14).build();
+			ComandoReserva comandoReserva= new ComandoReservaTestDataBuilder().conIdMesa(14).build();
 
 	        mockMvc.perform( MockMvcRequestBuilders
 	                .post("/reserva")
@@ -58,34 +57,38 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 	    @Test
 	    void crearReservaConIdUsuarioErroneoTest() throws Exception {
 	    
-			ComandoReserva comandoReserva= new ComandoReservaTestBuild().conIdUsuario(1234l).build();
+			ComandoReserva comandoReserva= new ComandoReservaTestDataBuilder().conIdUsuario(1234l).build();
 
 	        mockMvc.perform( MockMvcRequestBuilders
 	                .post("/reserva")
 	                .content(objectMapper.writeValueAsString(comandoReserva))
 	                .contentType(MediaType.APPLICATION_JSON)
 	                .accept(MediaType.APPLICATION_JSON))
-	                .andExpect(status().is4xxClientError());
+	                .andExpect(status().is4xxClientError())
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.mensaje").value("error, Debe ingresar un numero de documento valido, con longitud entre 6 y 12 digitos "));
+	                
 	    }
 	    
 	    @Test
 	    void crearReservaConCantidadPersonasErroneoTest() throws Exception {
 	    
-			ComandoReserva comandoReserva= new ComandoReservaTestBuild().conCantidadPersonas(6).build();
+			ComandoReserva comandoReserva= new ComandoReservaTestDataBuilder().conCantidadPersonas(6).build();
 
 	        mockMvc.perform( MockMvcRequestBuilders
 	                .post("/reserva")
 	                .content(objectMapper.writeValueAsString(comandoReserva))
 	                .contentType(MediaType.APPLICATION_JSON)
 	                .accept(MediaType.APPLICATION_JSON))
-	                .andExpect(status().is4xxClientError());
+	                .andExpect(status().is4xxClientError())
+	                .andExpect(MockMvcResultMatchers.jsonPath("$.mensaje").value("error, Debe especificar la cantidad de personas por mesa: maximo 5 personas"));
+
 	    }
 	    
 	    
 	    @Test
 	    void intentarCrearReservaMesaNoDisponibleTest() throws Exception {
 	    
-			ComandoReserva reservaMesa1Cliente1= new ComandoReservaTestBuild().conIdUsuario(1122334455l).conIdMesa(2).build();
+			ComandoReserva reservaMesa1Cliente1= new ComandoReservaTestDataBuilder().conIdUsuario(1122334455l).conIdMesa(2).build();
 
 	        mockMvc.perform( MockMvcRequestBuilders
 	                .post("/reserva")
@@ -95,7 +98,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 	                .andExpect(status().isOk());
 	        
 	        
-	        ComandoReserva reservaMesa1Cliente2= new ComandoReservaTestBuild().conIdUsuario(77788899l).conIdMesa(2).build();
+	        ComandoReserva reservaMesa1Cliente2= new ComandoReservaTestDataBuilder().conIdUsuario(77788899l).conIdMesa(2).build();
 
 	        mockMvc.perform( MockMvcRequestBuilders
 	                .post("/reserva")
@@ -112,7 +115,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 	     @Test
 	    void crearReservaConDatosCorrectosTest() throws Exception {
 	    
-			ComandoReserva comandoReserva= new ComandoReservaTestBuild().build();
+			ComandoReserva comandoReserva= new ComandoReservaTestDataBuilder().build();
 
 	        mockMvc.perform( MockMvcRequestBuilders
 	                .post("/reserva")

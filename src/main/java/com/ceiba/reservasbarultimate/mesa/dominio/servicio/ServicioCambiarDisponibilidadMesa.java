@@ -23,7 +23,7 @@ public class ServicioCambiarDisponibilidadMesa {
 		this.conversorMesaDtoAMesa = conversorMesaDtoAMesa;
 	}
 
-	public void ejecutar(MesaDto mesaDto) {
+	public Boolean ejecutar(MesaDto mesaDto) {
 			
 		
 		if (Boolean.TRUE.equals(estaLaMesaDisponible(mesaDto) ) )
@@ -31,7 +31,7 @@ public class ServicioCambiarDisponibilidadMesa {
 		
 		Mesa mesa = conversorMesaDtoAMesa.ejecutar(mesaDto);
 		
-		mesaRepositorio.actualizar(mesa);
+		return mesaRepositorio.actualizar(mesa);
 	}
 
 	public Boolean estaLaMesaDisponible(MesaDto mesaDto) {
