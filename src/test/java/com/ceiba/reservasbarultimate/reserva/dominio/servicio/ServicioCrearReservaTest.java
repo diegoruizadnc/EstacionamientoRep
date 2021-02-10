@@ -1,14 +1,18 @@
 package com.ceiba.reservasbarultimate.reserva.dominio.servicio;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import com.ceiba.reservasbarultimate.comun.dominio.excepciones.DatosNoEncontradosExcepcion;
 import com.ceiba.reservasbarultimate.mesa.builders.MesaDtoTestDataBuilder;
 import com.ceiba.reservasbarultimate.mesa.dominio.modelo.dto.MesaDto;
 import com.ceiba.reservasbarultimate.mesa.dominio.puerto.dao.MesaDao;
@@ -81,13 +85,17 @@ class ServicioCrearReservaTest {
 		ServicioCrearReserva servicioCrearReserva = new ServicioCrearReserva(reservaRepositorio,
 				servicioCambiarDisponibilidadMesa, servicioCalcularValorMesaHoy, mesaDao);
         
-		try {
+		/*try {
 			ReservaDto nuevaReservaDto = servicioCrearReserva.ejecutar(reserva);
+			fail("No se lanzo la excepcion esperada");
 		} 
 		catch(Exception e) {
 			//assert
 			assertEquals("La mesa que se esta buscando NO existe", e.getMessage());
-		}	
+		}	*/
+		
+		// 
+		Assertions.assertThrows(DatosNoEncontradosExcepcion.class, ()->{servicioCrearReserva.ejecutar(reserva);});
 		
 	}
 

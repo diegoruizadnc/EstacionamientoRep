@@ -26,9 +26,6 @@ public class Reserva {
 	
 	
 
-	public Reserva() {
-		
-	}
 
 	public Reserva( Integer idMesa, Long idUsuario, Integer cantidadPersonas) {
 		
